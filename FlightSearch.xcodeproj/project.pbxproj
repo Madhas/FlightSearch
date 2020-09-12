@@ -11,7 +11,23 @@
 		EA74B9D924FC1E2F001623B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B9D824FC1E2F001623B0 /* ViewController.swift */; };
 		EA74B9DE24FC1E30001623B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA74B9DD24FC1E30001623B0 /* Assets.xcassets */; };
 		EA74B9E124FC1E30001623B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA74B9DF24FC1E30001623B0 /* LaunchScreen.storyboard */; };
+		EAACDE53250D01EE00B01B8F /* HTTPWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; };
+		EAACDE54250D01EE00B01B8F /* HTTPWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EAACDE55250D01EE00B01B8F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EAACDE54250D01EE00B01B8F /* HTTPWrapper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EA74B9D124FC1E2F001623B0 /* FlightSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +36,7 @@
 		EA74B9DD24FC1E30001623B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA74B9E024FC1E30001623B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA74B9E224FC1E30001623B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPWrapper.framework; path = FlightSearch/Dependencies/HTTPWrapper.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAACDE53250D01EE00B01B8F /* HTTPWrapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +56,7 @@
 			children = (
 				EA74B9D324FC1E2F001623B0 /* FlightSearch */,
 				EA74B9D224FC1E2F001623B0 /* Products */,
+				EAACDE51250D01ED00B01B8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +80,14 @@
 			path = FlightSearch;
 			sourceTree = "<group>";
 		};
+		EAACDE51250D01ED00B01B8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +98,7 @@
 				EA74B9CD24FC1E2F001623B0 /* Sources */,
 				EA74B9CE24FC1E2F001623B0 /* Frameworks */,
 				EA74B9CF24FC1E2F001623B0 /* Resources */,
+				EAACDE55250D01EE00B01B8F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -270,6 +298,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D4B5XXQ9V5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FlightSearch/Dependencies",
+				);
 				INFOPLIST_FILE = FlightSearch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -289,6 +321,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D4B5XXQ9V5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FlightSearch/Dependencies",
+				);
 				INFOPLIST_FILE = FlightSearch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

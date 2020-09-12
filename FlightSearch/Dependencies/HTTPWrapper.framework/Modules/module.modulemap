@@ -1,0 +1,11 @@
+framework module HTTPWrapper {
+  umbrella header "HTTPWrapper.h"
+
+  export *
+  module * { export * }
+}
+
+module HTTPWrapper.Swift {
+    header "HTTPWrapper-Swift.h"
+    requires objc
+}
