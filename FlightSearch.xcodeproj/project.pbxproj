@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EA74B9D524FC1E2F001623B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B9D424FC1E2F001623B0 /* AppDelegate.swift */; };
-		EA74B9D924FC1E2F001623B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B9D824FC1E2F001623B0 /* ViewController.swift */; };
 		EA74B9DE24FC1E30001623B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA74B9DD24FC1E30001623B0 /* Assets.xcassets */; };
 		EA74B9E124FC1E30001623B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA74B9DF24FC1E30001623B0 /* LaunchScreen.storyboard */; };
 		EAACDE53250D01EE00B01B8F /* HTTPWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; };
@@ -32,7 +31,6 @@
 /* Begin PBXFileReference section */
 		EA74B9D124FC1E2F001623B0 /* FlightSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA74B9D424FC1E2F001623B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA74B9D824FC1E2F001623B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EA74B9DD24FC1E30001623B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA74B9E024FC1E30001623B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA74B9E224FC1E30001623B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,11 +69,10 @@
 		EA74B9D324FC1E2F001623B0 /* FlightSearch */ = {
 			isa = PBXGroup;
 			children = (
+				EAACDE56250E477900B01B8F /* Code */,
+				EAACDE57250E478300B01B8F /* Resources */,
 				EA74B9D424FC1E2F001623B0 /* AppDelegate.swift */,
-				EA74B9D824FC1E2F001623B0 /* ViewController.swift */,
-				EA74B9DD24FC1E30001623B0 /* Assets.xcassets */,
 				EA74B9DF24FC1E30001623B0 /* LaunchScreen.storyboard */,
-				EA74B9E224FC1E30001623B0 /* Info.plist */,
 			);
 			path = FlightSearch;
 			sourceTree = "<group>";
@@ -86,6 +83,22 @@
 				EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAACDE56250E477900B01B8F /* Code */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Code;
+			sourceTree = "<group>";
+		};
+		EAACDE57250E478300B01B8F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EA74B9DD24FC1E30001623B0 /* Assets.xcassets */,
+				EA74B9E224FC1E30001623B0 /* Info.plist */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +172,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA74B9D924FC1E2F001623B0 /* ViewController.swift in Sources */,
 				EA74B9D524FC1E2F001623B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
