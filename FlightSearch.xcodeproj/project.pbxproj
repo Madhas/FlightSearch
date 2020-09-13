@@ -16,6 +16,7 @@
 		EAACDE5D250E488400B01B8F /* FlightSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */; };
 		EAACDE61250E4F8E00B01B8F /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE60250E4F8E00B01B8F /* Flight.swift */; };
 		EAACDE64250E562600B01B8F /* PlacesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE63250E562600B01B8F /* PlacesRequest.swift */; };
+		EAACDE6D250E5E4100B01B8F /* PlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE6C250E5E4100B01B8F /* PlacesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,7 @@
 		EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchPresenter.swift; sourceTree = "<group>"; };
 		EAACDE60250E4F8E00B01B8F /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		EAACDE63250E562600B01B8F /* PlacesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRequest.swift; sourceTree = "<group>"; };
+		EAACDE6C250E5E4100B01B8F /* PlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		EAACDE5E250E4E7300B01B8F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EAACDE6C250E5E4100B01B8F /* PlacesService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				EA74B9D524FC1E2F001623B0 /* AppDelegate.swift in Sources */,
 				EAACDE64250E562600B01B8F /* PlacesRequest.swift in Sources */,
 				EAACDE61250E4F8E00B01B8F /* Flight.swift in Sources */,
+				EAACDE6D250E5E4100B01B8F /* PlacesService.swift in Sources */,
 				EAACDE5B250E485700B01B8F /* FlightSearchController.swift in Sources */,
 				EAACDE5D250E488400B01B8F /* FlightSearchPresenter.swift in Sources */,
 			);
