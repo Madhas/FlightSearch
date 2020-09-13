@@ -10,5 +10,10 @@ import Foundation
 
 final class FlightSearchPresenter {
 
+    private let placesService: PlacesService
+    
+    init(placesService: PlacesService) {
+        self.placesService = placesService
+    }
     
 }
