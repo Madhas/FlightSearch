@@ -12,6 +12,8 @@
 		EA74B9E124FC1E30001623B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA74B9DF24FC1E30001623B0 /* LaunchScreen.storyboard */; };
 		EAACDE53250D01EE00B01B8F /* HTTPWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; };
 		EAACDE54250D01EE00B01B8F /* HTTPWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EAACDE5B250E485700B01B8F /* FlightSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE5A250E485700B01B8F /* FlightSearchController.swift */; };
+		EAACDE5D250E488400B01B8F /* FlightSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +37,8 @@
 		EA74B9E024FC1E30001623B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA74B9E224FC1E30001623B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPWrapper.framework; path = FlightSearch/Dependencies/HTTPWrapper.framework; sourceTree = "<group>"; };
+		EAACDE5A250E485700B01B8F /* FlightSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchController.swift; sourceTree = "<group>"; };
+		EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		EAACDE56250E477900B01B8F /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				EAACDE58250E47CB00B01B8F /* Modules */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -99,6 +104,23 @@
 				EA74B9E224FC1E30001623B0 /* Info.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		EAACDE58250E47CB00B01B8F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EAACDE59250E47D500B01B8F /* FlightSearch */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		EAACDE59250E47D500B01B8F /* FlightSearch */ = {
+			isa = PBXGroup;
+			children = (
+				EAACDE5A250E485700B01B8F /* FlightSearchController.swift */,
+				EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */,
+			);
+			name = FlightSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +195,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA74B9D524FC1E2F001623B0 /* AppDelegate.swift in Sources */,
+				EAACDE5B250E485700B01B8F /* FlightSearchController.swift in Sources */,
+				EAACDE5D250E488400B01B8F /* FlightSearchPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
