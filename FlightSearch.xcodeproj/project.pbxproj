@@ -17,6 +17,7 @@
 		EAACDE61250E4F8E00B01B8F /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE60250E4F8E00B01B8F /* Flight.swift */; };
 		EAACDE64250E562600B01B8F /* PlacesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE63250E562600B01B8F /* PlacesRequest.swift */; };
 		EAACDE6D250E5E4100B01B8F /* PlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE6C250E5E4100B01B8F /* PlacesService.swift */; };
+		EAACDE70250E633D00B01B8F /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE6F250E633D00B01B8F /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		EAACDE60250E4F8E00B01B8F /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		EAACDE63250E562600B01B8F /* PlacesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRequest.swift; sourceTree = "<group>"; };
 		EAACDE6C250E5E4100B01B8F /* PlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesService.swift; sourceTree = "<group>"; };
+		EAACDE6F250E633D00B01B8F /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		EAACDE58250E47CB00B01B8F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EAACDE6E250E632200B01B8F /* Base */,
 				EAACDE59250E47D500B01B8F /* FlightSearch */,
 			);
 			name = Modules;
@@ -162,6 +165,14 @@
 			children = (
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		EAACDE6E250E632200B01B8F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EAACDE6F250E633D00B01B8F /* NavigationController.swift */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +251,7 @@
 				EAACDE61250E4F8E00B01B8F /* Flight.swift in Sources */,
 				EAACDE6D250E5E4100B01B8F /* PlacesService.swift in Sources */,
 				EAACDE5B250E485700B01B8F /* FlightSearchController.swift in Sources */,
+				EAACDE70250E633D00B01B8F /* NavigationController.swift in Sources */,
 				EAACDE5D250E488400B01B8F /* FlightSearchPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
