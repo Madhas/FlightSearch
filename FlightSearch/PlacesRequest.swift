@@ -8,7 +8,7 @@
 
 import HTTPWrapper
 
-struct Places: Request {
+struct PlacesRequest: Request {
     
     let term: String
     
