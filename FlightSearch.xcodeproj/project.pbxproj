@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EA0A86292572A1C100F3C9B7 /* FlightCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A86282572A1C100F3C9B7 /* FlightCollectionItem.swift */; };
 		EA0A862B2572A1DE00F3C9B7 /* FlightCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A862A2572A1DE00F3C9B7 /* FlightCollectionCell.swift */; };
+		EA0A862D2572AB4A00F3C9B7 /* UICollectionView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A862C2572AB4A00F3C9B7 /* UICollectionView+Convenience.swift */; };
 		EA74B9D524FC1E2F001623B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B9D424FC1E2F001623B0 /* AppDelegate.swift */; };
 		EA74B9DE24FC1E30001623B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA74B9DD24FC1E30001623B0 /* Assets.xcassets */; };
 		EA74B9E124FC1E30001623B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA74B9DF24FC1E30001623B0 /* LaunchScreen.storyboard */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		EA0A86282572A1C100F3C9B7 /* FlightCollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCollectionItem.swift; sourceTree = "<group>"; };
 		EA0A862A2572A1DE00F3C9B7 /* FlightCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCollectionCell.swift; sourceTree = "<group>"; };
+		EA0A862C2572AB4A00F3C9B7 /* UICollectionView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Convenience.swift"; sourceTree = "<group>"; };
 		EA74B9D124FC1E2F001623B0 /* FlightSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA74B9D424FC1E2F001623B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA74B9DD24FC1E30001623B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		EAACDE65250E595800B01B8F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EA0A862C2572AB4A00F3C9B7 /* UICollectionView+Convenience.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA74B9D524FC1E2F001623B0 /* AppDelegate.swift in Sources */,
+				EA0A862D2572AB4A00F3C9B7 /* UICollectionView+Convenience.swift in Sources */,
 				EAACDE64250E562600B01B8F /* PlacesRequest.swift in Sources */,
 				EAACDE61250E4F8E00B01B8F /* Flight.swift in Sources */,
 				EAACDE6D250E5E4100B01B8F /* PlacesService.swift in Sources */,
