@@ -15,10 +15,10 @@ struct Flight {
         let longitude: Double
     }
     
-    let name: String
-    let iata: String
-    let airportName: String?
-    let location: Location
+    var name: String
+    var iata: String
+    var airportName: String?
+    var location: Location
 }
 
 extension Flight.Location: Decodable {
