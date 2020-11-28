@@ -137,3 +137,11 @@ extension SearchBar: UITextFieldDelegate {
         delegate?.searchBar(self, textDidChange: textField.text ?? "")
     }
 }
+
+extension SearchBarDelegate {
+    
+    func searchBarShouldBeginEditing(_ searchBar: SearchBar) -> Bool { return true }
+    func searchBarCancelButtonTapped(_ searchBar: SearchBar) {}
+    func searchBarSearchButtonTapped(_ searchBar: SearchBar) {}
+    func searchBar(_ searchBar: SearchBar, textDidChange text: String) {}
+}
