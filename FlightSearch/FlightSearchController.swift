@@ -53,6 +53,9 @@ final class FlightSearchController: UIViewController {
         collectionView.backgroundColor = .backgroundPrimary
         collectionView.delegate = self
         
+        collectionView.contentInset.bottom = currentKeyboardHeight
+        collectionView.scrollIndicatorInsets.bottom = currentKeyboardHeight
+        
         dataSource = FlightsCollectionDataSource(collectionView: collectionView)
         collectionView.dataSource = dataSource
         
@@ -79,6 +82,7 @@ final class FlightSearchController: UIViewController {
         if isViewLoaded {
             UIView.animate(withDuration: animationDuration.doubleValue) {
                 self.collectionView.contentInset.bottom = self.currentKeyboardHeight
+                self.collectionView.scrollIndicatorInsets.bottom = self.currentKeyboardHeight
             }
         }
     }
