@@ -18,7 +18,7 @@
 		EA0A863F2572DA1200F3C9B7 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A863E2572DA1200F3C9B7 /* String+Localization.swift */; };
 		EA7121882573E67C003ACB13 /* FlightSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7121872573E67C003ACB13 /* FlightSearchRouter.swift */; };
 		EA71218A2573E9BB003ACB13 /* HTTPConfiguration+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7121892573E9BB003ACB13 /* HTTPConfiguration+Convenience.swift */; };
-		EA71219625744653003ACB13 /* MapContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71219525744653003ACB13 /* MapContrller.swift */; };
+		EA71219625744653003ACB13 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71219525744653003ACB13 /* MapController.swift */; };
 		EA7121982574465D003ACB13 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7121972574465D003ACB13 /* MapPresenter.swift */; };
 		EA71219A2574466D003ACB13 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7121992574466D003ACB13 /* MapRouter.swift */; };
 		EA74B9D524FC1E2F001623B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B9D424FC1E2F001623B0 /* AppDelegate.swift */; };
@@ -60,7 +60,7 @@
 		EA0A863E2572DA1200F3C9B7 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		EA7121872573E67C003ACB13 /* FlightSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchRouter.swift; sourceTree = "<group>"; };
 		EA7121892573E9BB003ACB13 /* HTTPConfiguration+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPConfiguration+Convenience.swift"; sourceTree = "<group>"; };
-		EA71219525744653003ACB13 /* MapContrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContrller.swift; sourceTree = "<group>"; };
+		EA71219525744653003ACB13 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		EA7121972574465D003ACB13 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		EA7121992574466D003ACB13 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
 		EA74B9D124FC1E2F001623B0 /* FlightSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,7 +135,7 @@
 		EA71219425744630003ACB13 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				EA71219525744653003ACB13 /* MapContrller.swift */,
+				EA71219525744653003ACB13 /* MapController.swift */,
 				EA7121972574465D003ACB13 /* MapPresenter.swift */,
 				EA7121992574466D003ACB13 /* MapRouter.swift */,
 			);
@@ -354,7 +354,7 @@
 				EAACDE70250E633D00B01B8F /* NavigationController.swift in Sources */,
 				EAACDE5D250E488400B01B8F /* FlightSearchPresenter.swift in Sources */,
 				EA0A863B2572B48400F3C9B7 /* UIImage+Assets.swift in Sources */,
-				EA71219625744653003ACB13 /* MapContrller.swift in Sources */,
+				EA71219625744653003ACB13 /* MapController.swift in Sources */,
 				EA0A86392572B00000F3C9B7 /* SearchBarTextField.swift in Sources */,
 				EA0A863F2572DA1200F3C9B7 /* String+Localization.swift in Sources */,
 			);

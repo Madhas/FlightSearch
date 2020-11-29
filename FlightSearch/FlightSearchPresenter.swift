@@ -48,6 +48,6 @@ final class FlightSearchPresenter: FlightSearchViewOutput {
     }
     
     func didSelect(flight: Flight) {
-        
+        moduleOutput.showMap(for: flight)
     }
 }

@@ -19,8 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let client = HTTPClient(configuration: .default)
         let router = FlightSearchRouter(client: client)
         
+        let controller = router.assembleModule()
+        
         let window = UIWindow()
-        window.rootViewController = router.assembleModule()
+        window.rootViewController = NavigationController(rootViewController: controller)
         window.makeKeyAndVisible()
         
         self.window = window

@@ -10,6 +10,7 @@ import HTTPWrapper
 
 protocol FlightSearchModuleOutput: AnyObject {
     
+    func showMap(for flight: Flight)
 }
 
 final class FlightSearchRouter {
@@ -33,7 +34,7 @@ final class FlightSearchRouter {
         presenter.moduleOutput = self
         self.controller = controller
         
-        return NavigationController(rootViewController: controller)
+        return controller
     }
 }
 
@@ -41,4 +42,10 @@ final class FlightSearchRouter {
 
 extension FlightSearchRouter: FlightSearchModuleOutput {
     
+    func showMap(for flight: Flight) {
+        let router = MapRouter(client: client)
+        let controller = router.assembleModule()
+        
+        self.controller?.navigationController?.pushViewController(controller, animated: true)
+    }
 }

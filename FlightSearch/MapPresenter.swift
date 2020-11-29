@@ -12,6 +12,9 @@ protocol MapViewOutput: AnyObject {
     
 }
 
-final class MapPresenter {
+final class MapPresenter: MapViewOutput {
+    
+    var moduleOutput: MapModuleOutput!
+    weak var viewInput: MapViewInput!
     
 }

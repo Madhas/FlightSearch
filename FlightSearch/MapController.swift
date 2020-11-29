@@ -12,12 +12,20 @@ protocol MapViewInput: AnyObject {
     
 }
 
-class MapContrller: UIViewController {
+class MapController: UIViewController {
+    
+    var viewOutput: MapViewOutput!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .backgroundPrimary
     }
 
+}
+
+// MARK: MapViewInput
+
+extension MapController: MapViewInput {
+    
 }
