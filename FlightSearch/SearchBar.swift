@@ -104,10 +104,12 @@ final class SearchBar: UIView {
         true
     }
     
+    @discardableResult
     override func becomeFirstResponder() -> Bool {
         textField.becomeFirstResponder()
     }
     
+    @discardableResult
     override func resignFirstResponder() -> Bool {
         textField.resignFirstResponder()
     }
