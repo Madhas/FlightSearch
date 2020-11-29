@@ -97,7 +97,7 @@ class FlightCollectionCell: UICollectionViewCell {
         addSubview(subtitleLabel)
         
         iataLabel.textColor = .searchAccent
-        iataLabel.font = .systemFont(ofSize: 18, weight: .medium)
+        iataLabel.font = .systemFont(ofSize: 18)
         iataLabel.textAlignment = .center
         addSubview(iataLabel)
         
