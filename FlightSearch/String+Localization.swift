@@ -11,6 +11,10 @@ import Foundation
 extension String {
 
     static var searchBarCancel: String {
-        return "Cancel"
+        "Cancel"
+    }
+    
+    static var searchPlaceholder: String {
+        "City, country or airport"
     }
 }
