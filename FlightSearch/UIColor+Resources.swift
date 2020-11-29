@@ -10,6 +10,18 @@ import UIKit
 
 extension UIColor {
     
+    static var backgroundPrimary: UIColor {
+        dynamic(light: "#fefefe", dark: "#242528")
+    }
+    
+    static var backgroundSecondary: UIColor {
+        dynamic(light: "#eff1f3", dark: "#1d1e20")
+    }
+    
+    static var backgroundNavigation: UIColor {
+        dynamic(light: "#184289", dark: "#030303")
+    }
+    
     static var textPrimary: UIColor {
         dynamic(light: "#0d131c", dark: "#eeeeef")
     }
