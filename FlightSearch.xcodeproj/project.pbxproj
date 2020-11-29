@@ -18,6 +18,9 @@
 		EA0A863F2572DA1200F3C9B7 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A863E2572DA1200F3C9B7 /* String+Localization.swift */; };
 		EA7121882573E67C003ACB13 /* FlightSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7121872573E67C003ACB13 /* FlightSearchRouter.swift */; };
 		EA71218A2573E9BB003ACB13 /* HTTPConfiguration+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7121892573E9BB003ACB13 /* HTTPConfiguration+Convenience.swift */; };
+		EA71219625744653003ACB13 /* MapContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71219525744653003ACB13 /* MapContrller.swift */; };
+		EA7121982574465D003ACB13 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7121972574465D003ACB13 /* MapPresenter.swift */; };
+		EA71219A2574466D003ACB13 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7121992574466D003ACB13 /* MapRouter.swift */; };
 		EA74B9D524FC1E2F001623B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B9D424FC1E2F001623B0 /* AppDelegate.swift */; };
 		EA74B9DE24FC1E30001623B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA74B9DD24FC1E30001623B0 /* Assets.xcassets */; };
 		EA74B9E124FC1E30001623B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA74B9DF24FC1E30001623B0 /* LaunchScreen.storyboard */; };
@@ -57,6 +60,9 @@
 		EA0A863E2572DA1200F3C9B7 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		EA7121872573E67C003ACB13 /* FlightSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchRouter.swift; sourceTree = "<group>"; };
 		EA7121892573E9BB003ACB13 /* HTTPConfiguration+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPConfiguration+Convenience.swift"; sourceTree = "<group>"; };
+		EA71219525744653003ACB13 /* MapContrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContrller.swift; sourceTree = "<group>"; };
+		EA7121972574465D003ACB13 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		EA7121992574466D003ACB13 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
 		EA74B9D124FC1E2F001623B0 /* FlightSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA74B9D424FC1E2F001623B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA74B9DD24FC1E30001623B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +132,16 @@
 			name = Search;
 			sourceTree = "<group>";
 		};
+		EA71219425744630003ACB13 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				EA71219525744653003ACB13 /* MapContrller.swift */,
+				EA7121972574465D003ACB13 /* MapPresenter.swift */,
+				EA7121992574466D003ACB13 /* MapRouter.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 		EA74B9C824FC1E2F001623B0 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +208,7 @@
 			children = (
 				EAACDE6E250E632200B01B8F /* Base */,
 				EAACDE59250E47D500B01B8F /* FlightSearch */,
+				EA71219425744630003ACB13 /* Map */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -326,15 +343,18 @@
 				EA0A863D2572B5B000F3C9B7 /* UIColor+Resources.swift in Sources */,
 				EAACDE61250E4F8E00B01B8F /* Flight.swift in Sources */,
 				EAACDE6D250E5E4100B01B8F /* PlacesService.swift in Sources */,
+				EA7121982574465D003ACB13 /* MapPresenter.swift in Sources */,
 				EA0A86362572AEC300F3C9B7 /* SearchBar.swift in Sources */,
 				EA71218A2573E9BB003ACB13 /* HTTPConfiguration+Convenience.swift in Sources */,
 				EA0A8615257292D500F3C9B7 /* FlightsCollectionDataSource.swift in Sources */,
+				EA71219A2574466D003ACB13 /* MapRouter.swift in Sources */,
 				EA0A86292572A1C100F3C9B7 /* FlightCollectionItem.swift in Sources */,
 				EAACDE5B250E485700B01B8F /* FlightSearchController.swift in Sources */,
 				EA0A862B2572A1DE00F3C9B7 /* FlightCollectionCell.swift in Sources */,
 				EAACDE70250E633D00B01B8F /* NavigationController.swift in Sources */,
 				EAACDE5D250E488400B01B8F /* FlightSearchPresenter.swift in Sources */,
 				EA0A863B2572B48400F3C9B7 /* UIImage+Assets.swift in Sources */,
+				EA71219625744653003ACB13 /* MapContrller.swift in Sources */,
 				EA0A86392572B00000F3C9B7 /* SearchBarTextField.swift in Sources */,
 				EA0A863F2572DA1200F3C9B7 /* String+Localization.swift in Sources */,
 			);
