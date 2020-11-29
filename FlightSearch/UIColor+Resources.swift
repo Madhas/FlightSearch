@@ -19,7 +19,7 @@ extension UIColor {
     }
     
     static var backgroundNavigation: UIColor {
-        dynamic(light: "#184289", dark: "#030303")
+        dynamic(light: "#184289", dark: "#020202")
     }
     
     static var textPrimary: UIColor {

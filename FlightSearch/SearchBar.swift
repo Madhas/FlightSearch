@@ -40,6 +40,15 @@ final class SearchBar: UIView {
         }
     }
     
+    var cornerRadius: CGFloat {
+        set {
+            textField.layer.cornerRadius = newValue
+        }
+        get {
+            textField.layer.cornerRadius
+        }
+    }
+    
     private let textField = SearchBarTextField()
     private let cancelButton = UIButton(type: .custom)
     private var cancelButtonShown = false
@@ -78,6 +87,29 @@ final class SearchBar: UIView {
             animation()
             completion(true)
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let buttonWidth = cancelButton.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: 22)).width
+        
+        let textWidth = bounds.width - (cancelButtonShown ? (12 + buttonWidth) : 0)
+        textField.frame = CGRect(origin: .zero, size: CGSize(width: textWidth, height: bounds.height))
+        
+        cancelButton.frame = CGRect(x: textField.frame.maxX + 12, y: 0, width: buttonWidth, height: bounds.height)
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        true
+    }
+    
+    override func becomeFirstResponder() -> Bool {
+        textField.becomeFirstResponder()
+    }
+    
+    override func resignFirstResponder() -> Bool {
+        textField.resignFirstResponder()
     }
     
     // MARK: Private
