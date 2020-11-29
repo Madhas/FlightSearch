@@ -49,6 +49,10 @@ extension UIColor {
     static var searchAccent: UIColor {
         dynamic(light: "#2e74f5", dark: "#3882ea")
     }
+    
+    static var separator: UIColor {
+        dynamic(light: "#cdd3dc", dark: "#3d3f43")
+    }
 }
 
 extension UIColor {
