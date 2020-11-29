@@ -68,6 +68,7 @@ final class FlightSearchController: UIViewController {
         }
         
         let searchBar = SearchBar(frame: navbarBounds.insetBy(dx: 12, dy: 4))
+        searchBar.placeholder = .searchPlaceholder
         searchBar.delegate = self
         navigationItem.titleView = searchBar
     }
