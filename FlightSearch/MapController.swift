@@ -6,7 +6,7 @@
 //  Copyright © 2020 home.com. All rights reserved.
 //
 
-import UIKit
+import MapKit
 
 protocol MapViewInput: AnyObject {
     
@@ -15,13 +15,33 @@ protocol MapViewInput: AnyObject {
 class MapController: UIViewController {
     
     var viewOutput: MapViewOutput!
+    
+    private var mapView: MKMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .backgroundPrimary
+        mapView = MKMapView(frame: view.bounds)
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(mapView)
+        
+        setInitialRegion()
     }
-
+    
+    private func setInitialRegion() {
+        let (start, finish) = viewOutput.pathLocations()
+        
+        let latRadius = fabs(start.latitude - finish.latitude) / 2
+        let lonRadius = fabs(start.longitude - finish.longitude) / 2
+        let span = max(latRadius, lonRadius) * 3.5
+        var region = MKCoordinateRegion()
+        region.center.latitude = max(start.latitude, finish.latitude) - latRadius
+        region.center.longitude = max(start.longitude, finish.longitude) - lonRadius
+        region.span.latitudeDelta = span
+        region.span.longitudeDelta = span
+        
+        mapView.setRegion(region, animated: false)
+    }
 }
 
 // MARK: MapViewInput
