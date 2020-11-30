@@ -22,9 +22,9 @@ final class MapRouter {
         self.client = client
     }
     
-    func assembleModule() -> UIViewController {
+    func assembleModule(flight: Flight) -> UIViewController {
         let controller = MapController()
-        let presenter = MapPresenter()
+        let presenter = MapPresenter(flight: flight)
         
         controller.viewOutput = presenter
         presenter.viewInput = controller

@@ -44,7 +44,7 @@ extension FlightSearchRouter: FlightSearchModuleOutput {
     
     func showMap(for flight: Flight) {
         let router = MapRouter(client: client)
-        let controller = router.assembleModule()
+        let controller = router.assembleModule(flight: flight)
         
         self.controller?.navigationController?.pushViewController(controller, animated: true)
     }

@@ -10,6 +10,7 @@ import Foundation
 
 protocol MapViewOutput: AnyObject {
     
+    func pathLocations() -> (start: Flight.Location, finish: Flight.Location)
 }
 
 final class MapPresenter: MapViewOutput {
@@ -17,4 +18,13 @@ final class MapPresenter: MapViewOutput {
     var moduleOutput: MapModuleOutput!
     weak var viewInput: MapViewInput!
     
+    private let flight: Flight
+    
+    init(flight: Flight) {
+        self.flight = flight
+    }
+    
+    func pathLocations() -> (start: Flight.Location, finish: Flight.Location) {
+        (.saintPetersburg, flight.location)
+    }
 }
