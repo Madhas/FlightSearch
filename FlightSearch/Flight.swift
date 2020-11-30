@@ -28,6 +28,13 @@ extension Flight.Location: Decodable {
     }
 }
 
+extension Flight.Location {
+
+    static var saintPetersburg: Flight.Location {
+        Flight.Location(latitude: 60.142708398306475, longitude: 29.961299028713075)
+    }
+}
+
 extension Flight: Decodable {
     enum CodingKeys: String, CodingKey {
         case name
