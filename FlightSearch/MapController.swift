@@ -10,6 +10,7 @@ import MapKit
 
 protocol MapViewInput: AnyObject {
     
+    func show(start: Flight.Location, finish: Flight.Location)
 }
 
 class MapController: UIViewController {
@@ -25,12 +26,15 @@ class MapController: UIViewController {
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(mapView)
         
-        setInitialRegion()
+        viewOutput.touch()
     }
+}
+
+// MARK: MapViewInput
+
+extension MapController: MapViewInput {
     
-    private func setInitialRegion() {
-        let (start, finish) = viewOutput.pathLocations()
-        
+    func show(start: Flight.Location, finish: Flight.Location) {
         let latRadius = fabs(start.latitude - finish.latitude) / 2
         let lonRadius = fabs(start.longitude - finish.longitude) / 2
         let span = max(latRadius, lonRadius) * 3.5
@@ -42,10 +46,4 @@ class MapController: UIViewController {
         
         mapView.setRegion(region, animated: false)
     }
-}
-
-// MARK: MapViewInput
-
-extension MapController: MapViewInput {
-    
 }

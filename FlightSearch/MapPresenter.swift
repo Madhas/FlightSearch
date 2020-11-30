@@ -10,7 +10,7 @@ import Foundation
 
 protocol MapViewOutput: AnyObject {
     
-    func pathLocations() -> (start: Flight.Location, finish: Flight.Location)
+    func touch()
 }
 
 final class MapPresenter: MapViewOutput {
@@ -24,7 +24,7 @@ final class MapPresenter: MapViewOutput {
         self.flight = flight
     }
     
-    func pathLocations() -> (start: Flight.Location, finish: Flight.Location) {
-        (.saintPetersburg, flight.location)
+    func touch() {
+        viewInput.show(start: .saintPetersburg, finish: flight.location)
     }
 }
