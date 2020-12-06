@@ -31,15 +31,7 @@ class MapController: UIViewController {
     }
     
     private func showRegionBetween(start: Flight, finish: Flight) {
-        let latRadius = fabs(start.location.latitude - finish.location.latitude) / 2
-        let lonRadius = fabs(start.location.longitude - finish.location.longitude) / 2
-        let span = max(latRadius, lonRadius) * 3.5
-        var region = MKCoordinateRegion()
-        region.center.latitude = max(start.location.latitude, finish.location.latitude) - latRadius
-        region.center.longitude = max(start.location.longitude, finish.location.longitude) - lonRadius
-        region.span.latitudeDelta = span
-        region.span.longitudeDelta = span
-        
+        let region = MKCoordinateRegion(startLocation: start.location, finishLocation: finish.location)
         mapView.setRegion(region, animated: false)
     }
     
