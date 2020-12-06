@@ -26,7 +26,7 @@
 		EA74B9E124FC1E30001623B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA74B9DF24FC1E30001623B0 /* LaunchScreen.storyboard */; };
 		EA813906257CD7C600F70B58 /* AirportAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA813905257CD7C600F70B58 /* AirportAnnotation.swift */; };
 		EA813909257CE6A500F70B58 /* AirportAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA813908257CE6A500F70B58 /* AirportAnnotationView.swift */; };
-		EA81390D257CFD5E00F70B58 /* MKCoordinateRegion+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81390C257CFD5E00F70B58 /* MKCoordinateRegion+Convenience.swift */; };
+		EA813912257D2D3A00F70B58 /* MKMapRect+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA813911257D2D3A00F70B58 /* MKMapRect+Convenience.swift */; };
 		EAACDE53250D01EE00B01B8F /* HTTPWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; };
 		EAACDE54250D01EE00B01B8F /* HTTPWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EAACDE5B250E485700B01B8F /* FlightSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE5A250E485700B01B8F /* FlightSearchController.swift */; };
@@ -73,7 +73,7 @@
 		EA74B9E224FC1E30001623B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA813905257CD7C600F70B58 /* AirportAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportAnnotation.swift; sourceTree = "<group>"; };
 		EA813908257CE6A500F70B58 /* AirportAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportAnnotationView.swift; sourceTree = "<group>"; };
-		EA81390C257CFD5E00F70B58 /* MKCoordinateRegion+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Convenience.swift"; sourceTree = "<group>"; };
+		EA813911257D2D3A00F70B58 /* MKMapRect+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapRect+Convenience.swift"; sourceTree = "<group>"; };
 		EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPWrapper.framework; path = FlightSearch/Dependencies/HTTPWrapper.framework; sourceTree = "<group>"; };
 		EAACDE5A250E485700B01B8F /* FlightSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchController.swift; sourceTree = "<group>"; };
 		EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchPresenter.swift; sourceTree = "<group>"; };
@@ -277,7 +277,7 @@
 			children = (
 				EA0A862C2572AB4A00F3C9B7 /* UICollectionView+Convenience.swift */,
 				EA7121892573E9BB003ACB13 /* HTTPConfiguration+Convenience.swift */,
-				EA81390C257CFD5E00F70B58 /* MKCoordinateRegion+Convenience.swift */,
+				EA813911257D2D3A00F70B58 /* MKMapRect+Convenience.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -372,6 +372,7 @@
 				EA0A86362572AEC300F3C9B7 /* SearchBar.swift in Sources */,
 				EA71218A2573E9BB003ACB13 /* HTTPConfiguration+Convenience.swift in Sources */,
 				EA0A8615257292D500F3C9B7 /* FlightsCollectionDataSource.swift in Sources */,
+				EA813912257D2D3A00F70B58 /* MKMapRect+Convenience.swift in Sources */,
 				EA813909257CE6A500F70B58 /* AirportAnnotationView.swift in Sources */,
 				EA71219A2574466D003ACB13 /* MapRouter.swift in Sources */,
 				EA0A86292572A1C100F3C9B7 /* FlightCollectionItem.swift in Sources */,
@@ -380,7 +381,6 @@
 				EAACDE70250E633D00B01B8F /* NavigationController.swift in Sources */,
 				EAACDE5D250E488400B01B8F /* FlightSearchPresenter.swift in Sources */,
 				EA0A863B2572B48400F3C9B7 /* UIImage+Assets.swift in Sources */,
-				EA81390D257CFD5E00F70B58 /* MKCoordinateRegion+Convenience.swift in Sources */,
 				EA71219625744653003ACB13 /* MapController.swift in Sources */,
 				EA813906257CD7C600F70B58 /* AirportAnnotation.swift in Sources */,
 				EA0A86392572B00000F3C9B7 /* SearchBarTextField.swift in Sources */,

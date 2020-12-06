@@ -31,8 +31,9 @@ class MapController: UIViewController {
     }
     
     private func showRegionBetween(start: Flight, finish: Flight) {
-        let region = MKCoordinateRegion(startLocation: start.location, finishLocation: finish.location)
-        mapView.setRegion(region, animated: false)
+        let rect = MKMapRect(start: start.location, finish: finish.location)
+        let insets = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
+        mapView.setVisibleMapRect(rect, edgePadding: insets, animated: false)
     }
     
     private func addAnnotations(start: Flight, finish: Flight) {
