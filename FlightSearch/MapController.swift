@@ -32,7 +32,7 @@ class MapController: UIViewController {
     
     private func showRegionBetween(start: Flight, finish: Flight) {
         let rect = MKMapRect(start: start.location, finish: finish.location)
-        let insets = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
+        let insets = UIEdgeInsets(top: 100, left: 50, bottom: 100, right: 50)
         mapView.setVisibleMapRect(rect, edgePadding: insets, animated: false)
     }
     
@@ -47,6 +47,11 @@ class MapController: UIViewController {
         mapView.addAnnotation(startAnnotation)
         mapView.addAnnotation(finishAnnotation)
     }
+    
+    private func addPath(from start: Flight, to finish: Flight) {
+        let overlay = PathOverlay(start: start.location, finish: finish.location)
+        mapView.addOverlay(overlay)
+    }
 }
 
 // MARK: MapViewInput
@@ -56,6 +61,7 @@ extension MapController: MapViewInput {
     func show(start: Flight, finish: Flight) {
         showRegionBetween(start: start, finish: finish)
         addAnnotations(start: start, finish: finish)
+        addPath(from: start, to: finish)
     }
 }
 
@@ -69,5 +75,13 @@ extension MapController: MKMapViewDelegate {
         }
         
         return nil
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is PathOverlay {
+            return PathOverlayRenderer(overlay: overlay)
+        }
+        
+        return MKOverlayRenderer()
     }
 }
