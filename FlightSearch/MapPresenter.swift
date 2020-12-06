@@ -25,6 +25,6 @@ final class MapPresenter: MapViewOutput {
     }
     
     func touch() {
-        viewInput.show(start: .saintPetersburg, finish: flight.location)
+        viewInput.show(start: .saintPetersburg, finish: flight)
     }
 }

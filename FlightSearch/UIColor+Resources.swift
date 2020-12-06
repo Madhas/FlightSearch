@@ -57,6 +57,10 @@ extension UIColor {
     static var separator: UIColor {
         dynamic(light: "#cdd3dc", dark: "#3d3f43")
     }
+    
+    static var white: UIColor {
+        UIColor(hex6: "#eeeeef")!
+    }
 }
 
 extension UIColor {

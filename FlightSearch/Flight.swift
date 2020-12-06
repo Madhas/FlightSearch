@@ -28,10 +28,13 @@ extension Flight.Location: Decodable {
     }
 }
 
-extension Flight.Location {
+extension Flight {
 
-    static var saintPetersburg: Flight.Location {
-        Flight.Location(latitude: 60.142708398306475, longitude: 29.961299028713075)
+    static var saintPetersburg: Flight {
+        Flight(name: "Saint Petersburg",
+               iata: "LED",
+               airportName: "Pulkovo",
+               location: .init(latitude: 60.142708398306475, longitude: 29.961299028713075))
     }
 }
 
