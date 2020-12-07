@@ -29,6 +29,8 @@
 		EA813910257D0DFA00F70B58 /* PathOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81390F257D0DFA00F70B58 /* PathOverlay.swift */; };
 		EA813912257D2D3A00F70B58 /* MKMapRect+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA813911257D2D3A00F70B58 /* MKMapRect+Convenience.swift */; };
 		EA813914257D3EF000F70B58 /* PathOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA813913257D3EF000F70B58 /* PathOverlayRenderer.swift */; };
+		EA813917257D68E500F70B58 /* CGPoint+Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA813916257D68E500F70B58 /* CGPoint+Arithmetic.swift */; };
+		EA813919257E658200F70B58 /* FlightPathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA813918257E658200F70B58 /* FlightPathCalculator.swift */; };
 		EAACDE53250D01EE00B01B8F /* HTTPWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; };
 		EAACDE54250D01EE00B01B8F /* HTTPWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EAACDE5B250E485700B01B8F /* FlightSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE5A250E485700B01B8F /* FlightSearchController.swift */; };
@@ -78,6 +80,8 @@
 		EA81390F257D0DFA00F70B58 /* PathOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathOverlay.swift; sourceTree = "<group>"; };
 		EA813911257D2D3A00F70B58 /* MKMapRect+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapRect+Convenience.swift"; sourceTree = "<group>"; };
 		EA813913257D3EF000F70B58 /* PathOverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathOverlayRenderer.swift; sourceTree = "<group>"; };
+		EA813916257D68E500F70B58 /* CGPoint+Arithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Arithmetic.swift"; sourceTree = "<group>"; };
+		EA813918257E658200F70B58 /* FlightPathCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightPathCalculator.swift; sourceTree = "<group>"; };
 		EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPWrapper.framework; path = FlightSearch/Dependencies/HTTPWrapper.framework; sourceTree = "<group>"; };
 		EAACDE5A250E485700B01B8F /* FlightSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchController.swift; sourceTree = "<group>"; };
 		EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchPresenter.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				EAACDE6C250E5E4100B01B8F /* PlacesService.swift */,
+				EA813918257E658200F70B58 /* FlightPathCalculator.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				EA0A862C2572AB4A00F3C9B7 /* UICollectionView+Convenience.swift */,
 				EA7121892573E9BB003ACB13 /* HTTPConfiguration+Convenience.swift */,
 				EA813911257D2D3A00F70B58 /* MKMapRect+Convenience.swift */,
+				EA813916257D68E500F70B58 /* CGPoint+Arithmetic.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -381,6 +387,7 @@
 				EA7121882573E67C003ACB13 /* FlightSearchRouter.swift in Sources */,
 				EA0A863D2572B5B000F3C9B7 /* UIColor+Resources.swift in Sources */,
 				EAACDE61250E4F8E00B01B8F /* Flight.swift in Sources */,
+				EA813919257E658200F70B58 /* FlightPathCalculator.swift in Sources */,
 				EAACDE6D250E5E4100B01B8F /* PlacesService.swift in Sources */,
 				EA7121982574465D003ACB13 /* MapPresenter.swift in Sources */,
 				EA0A86362572AEC300F3C9B7 /* SearchBar.swift in Sources */,
@@ -400,6 +407,7 @@
 				EA813906257CD7C600F70B58 /* AirportAnnotation.swift in Sources */,
 				EA0A86392572B00000F3C9B7 /* SearchBarTextField.swift in Sources */,
 				EA813914257D3EF000F70B58 /* PathOverlayRenderer.swift in Sources */,
+				EA813917257D68E500F70B58 /* CGPoint+Arithmetic.swift in Sources */,
 				EA0A863F2572DA1200F3C9B7 /* String+Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
