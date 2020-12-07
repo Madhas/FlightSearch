@@ -31,6 +31,7 @@
 		EA813914257D3EF000F70B58 /* PathOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA813913257D3EF000F70B58 /* PathOverlayRenderer.swift */; };
 		EA813917257D68E500F70B58 /* CGPoint+Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA813916257D68E500F70B58 /* CGPoint+Arithmetic.swift */; };
 		EA813919257E658200F70B58 /* FlightPathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA813918257E658200F70B58 /* FlightPathCalculator.swift */; };
+		EA81391B257E7B2800F70B58 /* FlightOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81391A257E7B2800F70B58 /* FlightOverlayRenderer.swift */; };
 		EAACDE53250D01EE00B01B8F /* HTTPWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; };
 		EAACDE54250D01EE00B01B8F /* HTTPWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EAACDE5B250E485700B01B8F /* FlightSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE5A250E485700B01B8F /* FlightSearchController.swift */; };
@@ -82,6 +83,7 @@
 		EA813913257D3EF000F70B58 /* PathOverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathOverlayRenderer.swift; sourceTree = "<group>"; };
 		EA813916257D68E500F70B58 /* CGPoint+Arithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Arithmetic.swift"; sourceTree = "<group>"; };
 		EA813918257E658200F70B58 /* FlightPathCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightPathCalculator.swift; sourceTree = "<group>"; };
+		EA81391A257E7B2800F70B58 /* FlightOverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightOverlayRenderer.swift; sourceTree = "<group>"; };
 		EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPWrapper.framework; path = FlightSearch/Dependencies/HTTPWrapper.framework; sourceTree = "<group>"; };
 		EAACDE5A250E485700B01B8F /* FlightSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchController.swift; sourceTree = "<group>"; };
 		EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchPresenter.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				EA81390F257D0DFA00F70B58 /* PathOverlay.swift */,
 				EA813913257D3EF000F70B58 /* PathOverlayRenderer.swift */,
+				EA81391A257E7B2800F70B58 /* FlightOverlayRenderer.swift */,
 			);
 			name = PathOverlay;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA74B9D524FC1E2F001623B0 /* AppDelegate.swift in Sources */,
+				EA81391B257E7B2800F70B58 /* FlightOverlayRenderer.swift in Sources */,
 				EA0A862D2572AB4A00F3C9B7 /* UICollectionView+Convenience.swift in Sources */,
 				EAACDE64250E562600B01B8F /* PlacesRequest.swift in Sources */,
 				EA7121882573E67C003ACB13 /* FlightSearchRouter.swift in Sources */,

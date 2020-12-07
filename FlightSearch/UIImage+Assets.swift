@@ -17,4 +17,8 @@ extension UIImage {
     static var clear16: UIImage {
         UIImage(named: "clear_16")!
     }
+    
+    static var plane: UIImage {
+        UIImage(named: "plane")!
+    }
 }

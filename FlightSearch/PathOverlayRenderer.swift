@@ -10,27 +10,25 @@ import MapKit
 
 final class PathOverlayRenderer: MKOverlayPathRenderer {
 
-    private let calculator: FlightPathCalculator
+    private let calculator = FlightPathCalculator()
     
     override init(overlay: MKOverlay) {
-        calculator = FlightPathCalculator()
-        
         super.init(overlay: overlay)
         
         strokeColor = .accent
         lineWidth = 1.5
         lineCap = .round
         lineDashPattern = [3, 4]
-    }
-
-    override func createPath() {
+        
         guard let overlay = overlay as? PathOverlay else { return }
         
         let rect = self.rect(for: overlay.boundingMapRect)
         let startPoint = self.point(for: overlay.startPoint)
         let endPoint = self.point(for: overlay.endPoint)
-
         calculator.update(boundingRect: rect, start: startPoint, end: endPoint)
+    }
+
+    override func createPath() {
         self.path = calculator.cubicCurve().cgPath
     }
 }

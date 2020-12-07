@@ -38,10 +38,8 @@ final class FlightPathCalculator {
         max(min(boundingRect.height, boundingRect.width), max(boundingRect.height, boundingRect.width) / 4)
     }
     
-    init() {
-        boundingRect = .zero
-        startPoint = .zero
-        endPoint = .zero
+    convenience init() {
+        self.init(boundingRect: .zero, start: .zero, end: .zero)
     }
     
     init(boundingRect: CGRect, start: CGPoint, end: CGPoint) {
