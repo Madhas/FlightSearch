@@ -49,8 +49,11 @@ class MapController: UIViewController {
     }
     
     private func addPath(from start: Flight, to finish: Flight) {
-        let overlay = PathOverlay(start: start.location, finish: finish.location)
-        mapView.addOverlay(overlay)
+        let routeOverlay = PathOverlay(start: start.location, finish: finish.location, type: .route)
+        let flightOverlay = PathOverlay(start: start.location, finish: finish.location, type: .flight)
+        
+        mapView.addOverlay(routeOverlay)
+        mapView.addOverlay(flightOverlay)
     }
 }
 
@@ -78,8 +81,13 @@ extension MapController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is PathOverlay {
-            return PathOverlayRenderer(overlay: overlay)
+        if let overlay = overlay as? PathOverlay {
+            switch overlay.type {
+            case .route:
+                return PathOverlayRenderer(overlay: overlay)
+            case .flight:
+                return FlightOverlayRenderer(overlay: overlay)
+            }
         }
         
         return MKOverlayRenderer()
