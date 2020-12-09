@@ -34,7 +34,6 @@ final class PlaneAnnotationView: MKAnnotationView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @available(iOS 11.0, *)
     override func prepareForDisplay() {
         super.prepareForDisplay()
         if displayLink == nil {
