@@ -9,20 +9,14 @@
 import MapKit
 
 final class PathOverlay: NSObject, MKOverlay {
-    
-    enum `Type` {
-        case route
-        case flight
-    }
 
     let coordinate: CLLocationCoordinate2D
     let boundingMapRect: MKMapRect
     
     let startPoint: MKMapPoint
     let endPoint: MKMapPoint
-    let type: Type
     
-    init(start: Flight.Location, finish: Flight.Location, type: Type) {
+    init(start: Flight.Location, finish: Flight.Location) {
         let rect = MKMapRect(start: start, finish: finish)
         
         boundingMapRect = rect
@@ -30,8 +24,6 @@ final class PathOverlay: NSObject, MKOverlay {
         
         startPoint = MKMapPoint(CLLocationCoordinate2D(latitude: start.latitude, longitude: start.longitude))
         endPoint = MKMapPoint(CLLocationCoordinate2D(latitude: finish.latitude, longitude: finish.longitude))
-        
-        self.type = type
         
         super.init()
     }

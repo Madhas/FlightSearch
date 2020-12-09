@@ -44,16 +44,17 @@ class MapController: UIViewController {
         let finishAnnotation = AirportAnnotation(coordinate: finishCoordinate,
                                                  title: finish.iata)
         
+        let planeAnnotation = PlaneAnnotation(start: start.location, finish: finish.location)
+        
         mapView.addAnnotation(startAnnotation)
         mapView.addAnnotation(finishAnnotation)
+        mapView.addAnnotation(planeAnnotation)
     }
     
     private func addPath(from start: Flight, to finish: Flight) {
-        let routeOverlay = PathOverlay(start: start.location, finish: finish.location, type: .route)
-        let flightOverlay = PathOverlay(start: start.location, finish: finish.location, type: .flight)
+        let routeOverlay = PathOverlay(start: start.location, finish: finish.location)
         
         mapView.addOverlay(routeOverlay)
-        mapView.addOverlay(flightOverlay)
     }
 }
 
@@ -75,6 +76,8 @@ extension MapController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is AirportAnnotation {
             return AirportAnnotationView(annotation: annotation, reuseIdentifier: String(describing: AirportAnnotationView.self))
+        } else if annotation is PlaneAnnotation {
+            return PlaneAnnotationView(annotation: annotation, reuseIdentifier: String(describing: PlaneAnnotationView.self))
         }
         
         return nil
@@ -82,12 +85,7 @@ extension MapController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if let overlay = overlay as? PathOverlay {
-            switch overlay.type {
-            case .route:
                 return PathOverlayRenderer(overlay: overlay)
-            case .flight:
-                return FlightOverlayRenderer(overlay: overlay)
-            }
         }
         
         return MKOverlayRenderer()

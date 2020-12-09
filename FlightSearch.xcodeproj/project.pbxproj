@@ -31,7 +31,8 @@
 		EA813914257D3EF000F70B58 /* PathOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA813913257D3EF000F70B58 /* PathOverlayRenderer.swift */; };
 		EA813917257D68E500F70B58 /* Point+Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA813916257D68E500F70B58 /* Point+Arithmetic.swift */; };
 		EA813919257E658200F70B58 /* FlightPathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA813918257E658200F70B58 /* FlightPathCalculator.swift */; };
-		EA81391B257E7B2800F70B58 /* FlightOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81391A257E7B2800F70B58 /* FlightOverlayRenderer.swift */; };
+		EA81394725800B5100F70B58 /* PlaneAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81394625800B5100F70B58 /* PlaneAnnotation.swift */; };
+		EA81394925800CF200F70B58 /* PlaneAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81394825800CF200F70B58 /* PlaneAnnotationView.swift */; };
 		EA81394B2581056200F70B58 /* Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81394A2581056200F70B58 /* Rect.swift */; };
 		EAACDE53250D01EE00B01B8F /* HTTPWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; };
 		EAACDE54250D01EE00B01B8F /* HTTPWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -84,7 +85,8 @@
 		EA813913257D3EF000F70B58 /* PathOverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathOverlayRenderer.swift; sourceTree = "<group>"; };
 		EA813916257D68E500F70B58 /* Point+Arithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+Arithmetic.swift"; sourceTree = "<group>"; };
 		EA813918257E658200F70B58 /* FlightPathCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightPathCalculator.swift; sourceTree = "<group>"; };
-		EA81391A257E7B2800F70B58 /* FlightOverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightOverlayRenderer.swift; sourceTree = "<group>"; };
+		EA81394625800B5100F70B58 /* PlaneAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneAnnotation.swift; sourceTree = "<group>"; };
+		EA81394825800CF200F70B58 /* PlaneAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneAnnotationView.swift; sourceTree = "<group>"; };
 		EA81394A2581056200F70B58 /* Rect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rect.swift; sourceTree = "<group>"; };
 		EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPWrapper.framework; path = FlightSearch/Dependencies/HTTPWrapper.framework; sourceTree = "<group>"; };
 		EAACDE5A250E485700B01B8F /* FlightSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		EA813904257CD7A300F70B58 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				EA81394525800B3600F70B58 /* PlaneAnnotation */,
 				EA81390E257D0DD500F70B58 /* PathOverlay */,
 				EA813907257CE51500F70B58 /* AirportAnnotation */,
 			);
@@ -212,9 +215,17 @@
 			children = (
 				EA81390F257D0DFA00F70B58 /* PathOverlay.swift */,
 				EA813913257D3EF000F70B58 /* PathOverlayRenderer.swift */,
-				EA81391A257E7B2800F70B58 /* FlightOverlayRenderer.swift */,
 			);
 			name = PathOverlay;
+			sourceTree = "<group>";
+		};
+		EA81394525800B3600F70B58 /* PlaneAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				EA81394625800B5100F70B58 /* PlaneAnnotation.swift */,
+				EA81394825800CF200F70B58 /* PlaneAnnotationView.swift */,
+			);
+			name = PlaneAnnotation;
 			sourceTree = "<group>";
 		};
 		EAACDE51250D01ED00B01B8F /* Frameworks */ = {
@@ -388,10 +399,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA74B9D524FC1E2F001623B0 /* AppDelegate.swift in Sources */,
-				EA81391B257E7B2800F70B58 /* FlightOverlayRenderer.swift in Sources */,
 				EA0A862D2572AB4A00F3C9B7 /* UICollectionView+Convenience.swift in Sources */,
 				EAACDE64250E562600B01B8F /* PlacesRequest.swift in Sources */,
 				EA7121882573E67C003ACB13 /* FlightSearchRouter.swift in Sources */,
+				EA81394925800CF200F70B58 /* PlaneAnnotationView.swift in Sources */,
 				EA0A863D2572B5B000F3C9B7 /* UIColor+Resources.swift in Sources */,
 				EAACDE61250E4F8E00B01B8F /* Flight.swift in Sources */,
 				EA813919257E658200F70B58 /* FlightPathCalculator.swift in Sources */,
@@ -413,6 +424,7 @@
 				EA0A863B2572B48400F3C9B7 /* UIImage+Assets.swift in Sources */,
 				EA71219625744653003ACB13 /* MapController.swift in Sources */,
 				EA813906257CD7C600F70B58 /* AirportAnnotation.swift in Sources */,
+				EA81394725800B5100F70B58 /* PlaneAnnotation.swift in Sources */,
 				EA0A86392572B00000F3C9B7 /* SearchBarTextField.swift in Sources */,
 				EA813914257D3EF000F70B58 /* PathOverlayRenderer.swift in Sources */,
 				EA813917257D68E500F70B58 /* Point+Arithmetic.swift in Sources */,
