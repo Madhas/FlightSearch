@@ -11,6 +11,9 @@ import MapKit
 final class PlaneAnnotation: NSObject, MKAnnotation {
 
     @objc dynamic var coordinate: CLLocationCoordinate2D
+    var startTime: Double = CACurrentMediaTime()
+    var directionForward = true
+    
     let startPoint: MKMapPoint
     let endPoint: MKMapPoint
     let boundingRect: MKMapRect

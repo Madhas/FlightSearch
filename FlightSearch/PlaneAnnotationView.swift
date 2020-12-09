@@ -14,8 +14,6 @@ final class PlaneAnnotationView: MKAnnotationView {
     
     private let calculator = FlightPathCalculator()
     private var displayLink: CADisplayLink?
-    
-    private var startTime: CFTimeInterval = 0
 
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
@@ -41,7 +39,6 @@ final class PlaneAnnotationView: MKAnnotationView {
         super.prepareForDisplay()
         if displayLink == nil {
             displayLink = CADisplayLink(target: self, selector: #selector(tick(_:)))
-            startTime = CACurrentMediaTime()
             displayLink?.add(to: .main, forMode: .common)
         }
     }
@@ -49,9 +46,17 @@ final class PlaneAnnotationView: MKAnnotationView {
     @objc private func tick(_ displayLink: CADisplayLink) {
         guard let annotation = annotation as? PlaneAnnotation else { return }
         
-        let passed = CACurrentMediaTime() - startTime
-        let progress = passed / PlaneAnnotationView.animationDuration
-        guard progress <= 1 else {
+        let passed = CACurrentMediaTime() - annotation.startTime
+        let progress: Double
+        if annotation.directionForward {
+            progress = passed / PlaneAnnotationView.animationDuration
+        } else {
+            progress = 1 - passed / PlaneAnnotationView.animationDuration
+        }
+        
+        guard progress <= 1, progress >= 0 else {
+            annotation.startTime = CACurrentMediaTime()
+            annotation.directionForward.toggle()
             return
         }
         
@@ -59,6 +64,6 @@ final class PlaneAnnotationView: MKAnnotationView {
         let angle = calculator.angle(from: progress)
         
         annotation.coordinate = center.mapPoint.coordinate
-        transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+        transform = CGAffineTransform(rotationAngle: CGFloat(annotation.directionForward ? angle : angle + .pi))
     }
 }
