@@ -22,9 +22,9 @@ final class PathOverlayRenderer: MKOverlayPathRenderer {
         
         guard let overlay = overlay as? PathOverlay else { return }
         
-        let rect = self.rect(for: overlay.boundingMapRect)
-        let startPoint = self.point(for: overlay.startPoint)
-        let endPoint = self.point(for: overlay.endPoint)
+        let rect = Rect(rect:self.rect(for: overlay.boundingMapRect))
+        let startPoint = Point(point: self.point(for: overlay.startPoint))
+        let endPoint = Point(point: self.point(for: overlay.endPoint))
         calculator.update(boundingRect: rect, start: startPoint, end: endPoint)
     }
 
