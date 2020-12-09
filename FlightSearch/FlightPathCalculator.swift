@@ -69,4 +69,16 @@ final class FlightPathCalculator {
         
         return p0 + p1 + p2 + p3
     }
+    
+    func angle(from t: Double) -> Double {
+        let currentDeriv = cubicCurveDerivative(from: t)
+        return atan2(currentDeriv.y, currentDeriv.x)
+    }
+ 
+    private func cubicCurveDerivative(from t: Double) -> Point {
+        let d1 = 3 * pow((1 - t), 2) * (ctrlPoint1 - startPoint)
+        let d2 = 6 * (1 - t) * t * (ctrlPoint2 - ctrlPoint1)
+        let d3 = 3 * pow(t, 2) * (endPoint - ctrlPoint2)
+        return d1 + d2 + d3
+    }
 }

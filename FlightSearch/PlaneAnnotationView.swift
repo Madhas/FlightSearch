@@ -10,7 +10,7 @@ import MapKit
 
 final class PlaneAnnotationView: MKAnnotationView {
     
-    static private let animationDuration: Double = 30
+    static private let animationDuration: Double = 10
     
     private let calculator = FlightPathCalculator()
     private var displayLink: CADisplayLink?
@@ -28,6 +28,7 @@ final class PlaneAnnotationView: MKAnnotationView {
             calculator.update(boundingRect: Rect(rect: annotation.boundingRect),
                               start: Point(point: annotation.startPoint),
                               end: Point(point: annotation.endPoint))
+            
         }
     }
     
@@ -55,6 +56,9 @@ final class PlaneAnnotationView: MKAnnotationView {
         }
         
         let center = calculator.point(from: progress)
+        let angle = calculator.angle(from: progress)
+        
         annotation.coordinate = center.mapPoint.coordinate
+        transform = CGAffineTransform(rotationAngle: CGFloat(angle))
     }
 }
