@@ -52,6 +52,7 @@ final class FlightSearchController: UIViewController {
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .backgroundPrimary
         collectionView.delegate = self
+        collectionView.alwaysBounceVertical = true
         
         collectionView.contentInset.bottom = currentKeyboardHeight
         collectionView.scrollIndicatorInsets.bottom = currentKeyboardHeight
@@ -82,8 +83,9 @@ final class FlightSearchController: UIViewController {
         currentKeyboardHeight = frameValue.cgRectValue.origin.y < view.frame.maxY ? frameValue.cgRectValue.height : 0
         if isViewLoaded {
             UIView.animate(withDuration: animationDuration.doubleValue) {
-                self.collectionView.contentInset.bottom = self.currentKeyboardHeight
-                self.collectionView.scrollIndicatorInsets.bottom = self.currentKeyboardHeight
+                let inset = self.currentKeyboardHeight > 0 ? self.currentKeyboardHeight - self.view.safeAreaInsets.bottom : 0
+                self.collectionView.contentInset.bottom = inset
+                self.collectionView.scrollIndicatorInsets.bottom = inset
             }
         }
     }
