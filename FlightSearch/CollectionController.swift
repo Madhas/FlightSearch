@@ -10,8 +10,12 @@ import UIKit
 
 class CollectionController: UIViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     var collectionViewLayout: UICollectionViewLayout {
-        return UICollectionViewFlowLayout()
+        UICollectionViewFlowLayout()
     }
     
     private(set) lazy var collectionView: UICollectionView = {
