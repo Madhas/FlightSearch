@@ -34,7 +34,7 @@ extension Flight {
         Flight(name: "Saint Petersburg",
                iata: "LED",
                airportName: "Pulkovo",
-               location: .init(latitude: 60.142708398306475, longitude: 29.961299028713075))
+               location: .init(latitude: 59.799825, longitude: 30.266915))
     }
 }
 
