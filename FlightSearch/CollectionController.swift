@@ -24,4 +24,18 @@ class CollectionController: UIViewController {
         return collectionView
     }()
     var dataSource: CollectionDataSource?
+    private weak var loadingView: LoadingView?
+    
+    func setLoading() {
+        guard loadingView == nil else { return }
+        
+        let frame = CGRect(x: 0, y: 0, width: collectionView.bounds.width, height: 48)
+        let loadingView = LoadingView(frame: frame)
+        
+        dataSource?.clear()
+        collectionView.reloadData()
+        
+        collectionView.addSubview(loadingView)
+        self.loadingView = loadingView
+    }
 }

@@ -97,7 +97,6 @@ extension FlightSearchController: FlightSearchViewInput {
     
     func show(items: [FlightCollectionItem]) {
         flightDataSource.update(items: items)
-        collectionView.reloadData()
     }
 }
 
@@ -141,6 +140,7 @@ extension FlightSearchController: SearchBarDelegate {
     }
     
     func searchBar(_ searchBar: SearchBar, textDidChange text: String) {
+        setLoading()
         viewOutput.didEnter(query: text)
     }
 }
