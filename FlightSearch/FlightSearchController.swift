@@ -11,6 +11,7 @@ import UIKit
 protocol FlightSearchViewInput: AnyObject {
     
     func show(items: [FlightCollectionItem])
+    func show(error: Error)
 }
 
 final class FlightSearchController: CollectionController {
@@ -97,6 +98,14 @@ extension FlightSearchController: FlightSearchViewInput {
     
     func show(items: [FlightCollectionItem]) {
         flightDataSource.update(items: items)
+    }
+    
+    func show(error: Error) {
+        if let error = error as? LocalError {
+            setInfo(text: error.description)
+        } else {
+            setInfo(text: error.localizedDescription)
+        }
     }
 }
 

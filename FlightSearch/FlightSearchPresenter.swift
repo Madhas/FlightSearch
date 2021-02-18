@@ -27,6 +27,7 @@ final class FlightSearchPresenter: FlightSearchViewOutput {
     }
     
     func didEnter(query: String) {
+        print("Query: \(query)")
         guard query.count > 0 else {
             viewInput.show(items: [])
             return
@@ -40,9 +41,14 @@ final class FlightSearchPresenter: FlightSearchViewOutput {
                 }
                 DispatchQueue.main.async {
                     self.viewInput.show(items: items)
+                    if items.isEmpty {
+                        self.viewInput.show(error: LocalError.notFound)
+                    }
                 }
             case .failure(let error):
-                break
+                DispatchQueue.main.async {
+                    self.viewInput.show(error: error)
+                }
             }
         }
     }
