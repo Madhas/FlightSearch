@@ -17,4 +17,8 @@ extension String {
     static var searchPlaceholder: String {
         "City, country or airport"
     }
+    
+    static var flightsNotFound: String {
+        "Flights not found."
+    }
 }
