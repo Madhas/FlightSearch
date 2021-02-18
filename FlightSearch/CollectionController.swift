@@ -26,8 +26,9 @@ class CollectionController: UIViewController {
     var dataSource: CollectionDataSource? {
         didSet {
             dataSource?.onUpdate = { [weak self] in
-                if self?.dataSource?.sections.count ?? 0 > 0, self?.loadingView != nil {
+                if self?.dataSource?.sections.count ?? 0 > 0 {
                     self?.loadingView?.removeFromSuperview()
+                    self?.infoView?.removeFromSuperview()
                 }
                 self?.collectionView.reloadData()
             }
@@ -35,6 +36,7 @@ class CollectionController: UIViewController {
     }
     
     private weak var loadingView: LoadingView?
+    private weak var infoView: InfoView?
     
     func setLoading() {
         guard loadingView == nil else { return }
@@ -47,5 +49,24 @@ class CollectionController: UIViewController {
         
         collectionView.addSubview(loadingView)
         self.loadingView = loadingView
+    }
+    
+    func setInfo(text: String) {
+        guard infoView ==  nil else {
+            infoView?.label.text = text
+            return
+        }
+        
+        let view = InfoView()
+        view.label.font = .systemFont(ofSize: 17)
+        view.label.textAlignment = .center
+        view.label.textColor = .textSecondary
+        view.label.numberOfLines = 4
+        view.label.text = text
+        
+        let height = view.label.sizeThatFits(CGSize(width: collectionView.bounds.width, height: .greatestFiniteMagnitude)).height
+        view.frame = CGRect(x: 0, y: 0, width: collectionView.bounds.width, height: height + 24)
+        collectionView.addSubview(view)
+        infoView = view
     }
 }
