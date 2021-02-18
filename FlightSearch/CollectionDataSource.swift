@@ -9,8 +9,14 @@
 import UIKit
 
 class CollectionDataSource: NSObject {
+    
+    var onUpdate: (() -> Void)?
 
-    var sections: [CollectionSectionDescriptor] = []
+    var sections: [CollectionSectionDescriptor] = [] {
+        didSet {
+            onUpdate?()
+        }
+    }
     
     private var registeredIdentifiers: Set<String> = []
     

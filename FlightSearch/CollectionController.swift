@@ -23,7 +23,17 @@ class CollectionController: UIViewController {
         
         return collectionView
     }()
-    var dataSource: CollectionDataSource?
+    var dataSource: CollectionDataSource? {
+        didSet {
+            dataSource?.onUpdate = { [weak self] in
+                if self?.dataSource?.sections.count ?? 0 > 0, self?.loadingView != nil {
+                    self?.loadingView?.removeFromSuperview()
+                }
+                self?.collectionView.reloadData()
+            }
+        }
+    }
+    
     private weak var loadingView: LoadingView?
     
     func setLoading() {
