@@ -10,14 +10,19 @@ import UIKit
 
 final class CollectionSectionDescriptor {
 
-    let cellsReusableIdentifier: String
+    let cellsClass: UICollectionViewCell.Type
+    var cellsReusableIdentifier: String {
+        String(describing: cellsClass)
+    }
+    
     let items: [Any]
     let configure: (UICollectionViewCell, IndexPath) -> Void
     
     init<Cell: UICollectionViewCell, Item>(items: [Item],
                                            configure: @escaping (Cell, Item, IndexPath) -> Void) {
         
-        cellsReusableIdentifier = String(describing: Cell.self)
+        cellsClass = Cell.self
+        
         self.items = items
         self.configure = { cell, indexPath in
             configure(cell as! Cell, items[indexPath.item], indexPath)
