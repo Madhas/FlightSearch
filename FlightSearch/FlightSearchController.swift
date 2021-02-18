@@ -13,14 +13,21 @@ protocol FlightSearchViewInput: AnyObject {
     func show(items: [FlightCollectionItem])
 }
 
-final class FlightSearchController: UIViewController {
+final class FlightSearchController: CollectionController {
     
     var viewOutput: FlightSearchViewOutput!
-
-    private(set) var collectionView: UICollectionView!
-    private var dataSource: FlightsCollectionDataSource!
     
     private var currentKeyboardHeight: CGFloat = 0
+    
+    override var collectionViewLayout: UICollectionViewLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = .leastNonzeroMagnitude
+        return layout
+    }
+    
+    private var flightDataSource: FlightsCollectionDataSource {
+        return dataSource as! FlightsCollectionDataSource
+    }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -47,20 +54,13 @@ final class FlightSearchController: UIViewController {
     }
     
     private func configureCollectionView() {
-        let layout = UICollectionViewFlowLayout()
-        collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
-        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        collectionView.backgroundColor = .backgroundPrimary
         collectionView.delegate = self
-        collectionView.alwaysBounceVertical = true
         
         collectionView.contentInset.bottom = currentKeyboardHeight
         collectionView.scrollIndicatorInsets.bottom = currentKeyboardHeight
         
-        dataSource = FlightsCollectionDataSource(collectionView: collectionView)
+        dataSource = FlightsCollectionDataSource()
         collectionView.dataSource = dataSource
-        
-        self.view.addSubview(collectionView)
     }
     
     private func configureSearchBar() {
@@ -96,7 +96,8 @@ final class FlightSearchController: UIViewController {
 extension FlightSearchController: FlightSearchViewInput {
     
     func show(items: [FlightCollectionItem]) {
-        dataSource.update(items: items)
+        flightDataSource.update(items: items)
+        collectionView.reloadData()
     }
 }
 
@@ -105,14 +106,16 @@ extension FlightSearchController: FlightSearchViewInput {
 extension FlightSearchController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return dataSource.itemSize(for: indexPath)
+        return CGSize(width: collectionView.bounds.width, height: 70)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
-        let flight = dataSource.items[indexPath.item].flight
-        viewOutput.didSelect(flight: flight)
+        let section = flightDataSource.sections[indexPath.section]
+        if let flight = section.items[indexPath.item] as? FlightCollectionItem {
+            viewOutput.didSelect(flight: flight.flight)
+        }
     }
 }
 
