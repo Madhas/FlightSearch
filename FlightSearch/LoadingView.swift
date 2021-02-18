@@ -15,6 +15,8 @@ final class LoadingView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        backgroundColor = .backgroundPrimary
+        
         let size: CGFloat = 20
         shapeLayer.bounds = CGRect(origin: .zero, size: CGSize(width: size, height: size))
         shapeLayer.strokeColor = UIColor.accent.cgColor
