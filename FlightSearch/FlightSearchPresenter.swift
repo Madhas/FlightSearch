@@ -27,7 +27,6 @@ final class FlightSearchPresenter: FlightSearchViewOutput {
     }
     
     func didEnter(query: String) {
-        print("Query: \(query)")
         guard query.count > 0 else {
             viewInput.show(items: [])
             return
