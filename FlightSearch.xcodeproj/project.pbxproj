@@ -116,7 +116,6 @@
 		EA0A86122572929200F3C9B7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				EA0A8613257292A100F3C9B7 /* CollectionDataSources */,
 				EA0A86372572AFE900F3C9B7 /* Search */,
 				EA813904257CD7A300F70B58 /* Map */,
 			);
@@ -253,6 +252,7 @@
 		EAACDE56250E477900B01B8F /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				EA0A8613257292A100F3C9B7 /* CollectionDataSources */,
 				EAACDE58250E47CB00B01B8F /* Modules */,
 				EAACDE5E250E4E7300B01B8F /* Services */,
 				EAACDE5F250E4E8E00B01B8F /* Models */,
