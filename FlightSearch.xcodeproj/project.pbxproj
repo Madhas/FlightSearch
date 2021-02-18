@@ -33,8 +33,6 @@
 		EA81394725800B5100F70B58 /* PlaneAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81394625800B5100F70B58 /* PlaneAnnotation.swift */; };
 		EA81394925800CF200F70B58 /* PlaneAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81394825800CF200F70B58 /* PlaneAnnotationView.swift */; };
 		EA81394B2581056200F70B58 /* Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81394A2581056200F70B58 /* Rect.swift */; };
-		EA81394E2582545C00F70B58 /* StateCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81394D2582545C00F70B58 /* StateCollectionItem.swift */; };
-		EA813950258254BF00F70B58 /* StateCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81394F258254BF00F70B58 /* StateCollectionCell.swift */; };
 		EAA85F2E25DEEE160071288F /* CollectionSectionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F2D25DEEE160071288F /* CollectionSectionDescriptor.swift */; };
 		EAA85F3225DEFA400071288F /* CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F3125DEFA400071288F /* CollectionDataSource.swift */; };
 		EAA85F3425DF01090071288F /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F3325DF01090071288F /* CollectionController.swift */; };
@@ -94,8 +92,6 @@
 		EA81394625800B5100F70B58 /* PlaneAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneAnnotation.swift; sourceTree = "<group>"; };
 		EA81394825800CF200F70B58 /* PlaneAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneAnnotationView.swift; sourceTree = "<group>"; };
 		EA81394A2581056200F70B58 /* Rect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rect.swift; sourceTree = "<group>"; };
-		EA81394D2582545C00F70B58 /* StateCollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCollectionItem.swift; sourceTree = "<group>"; };
-		EA81394F258254BF00F70B58 /* StateCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCollectionCell.swift; sourceTree = "<group>"; };
 		EAA85F2D25DEEE160071288F /* CollectionSectionDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSectionDescriptor.swift; sourceTree = "<group>"; };
 		EAA85F3125DEFA400071288F /* CollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDataSource.swift; sourceTree = "<group>"; };
 		EAA85F3325DF01090071288F /* CollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
@@ -126,9 +122,9 @@
 		EA0A86122572929200F3C9B7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				EAA85F3525DF03930071288F /* State */,
-				EA0A86372572AFE900F3C9B7 /* Search */,
 				EA813904257CD7A300F70B58 /* Map */,
+				EA0A86372572AFE900F3C9B7 /* Search */,
+				EAA85F3525DF03930071288F /* State */,
 			);
 			name = UIComponents;
 			sourceTree = "<group>";
@@ -146,7 +142,6 @@
 		EA0A86262572A05600F3C9B7 /* CollectionItems */ = {
 			isa = PBXGroup;
 			children = (
-				EA81394C2582544D00F70B58 /* State */,
 				EA0A86272572A0B000F3C9B7 /* Flight */,
 			);
 			name = CollectionItems;
@@ -245,15 +240,6 @@
 			name = PlaneAnnotation;
 			sourceTree = "<group>";
 		};
-		EA81394C2582544D00F70B58 /* State */ = {
-			isa = PBXGroup;
-			children = (
-				EA81394D2582545C00F70B58 /* StateCollectionItem.swift */,
-				EA81394F258254BF00F70B58 /* StateCollectionCell.swift */,
-			);
-			name = State;
-			sourceTree = "<group>";
-		};
 		EAA85F2C25DEEE020071288F /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,12 +269,12 @@
 			isa = PBXGroup;
 			children = (
 				EA0A8613257292A100F3C9B7 /* CollectionDataSources */,
+				EA0A86262572A05600F3C9B7 /* CollectionItems */,
+				EAACDE65250E595800B01B8F /* Extensions */,
+				EAACDE5F250E4E8E00B01B8F /* Models */,
 				EAACDE58250E47CB00B01B8F /* Modules */,
 				EAACDE5E250E4E7300B01B8F /* Services */,
-				EAACDE5F250E4E8E00B01B8F /* Models */,
-				EAACDE65250E595800B01B8F /* Extensions */,
 				EA0A86122572929200F3C9B7 /* UIComponents */,
-				EA0A86262572A05600F3C9B7 /* CollectionItems */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -328,8 +314,8 @@
 		EAACDE5E250E4E7300B01B8F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EAACDE6C250E5E4100B01B8F /* PlacesService.swift */,
 				EA813918257E658200F70B58 /* FlightPathCalculator.swift */,
+				EAACDE6C250E5E4100B01B8F /* PlacesService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -463,11 +449,9 @@
 				EA813909257CE6A500F70B58 /* AirportAnnotationView.swift in Sources */,
 				EAA85F3B25DF0D3B0071288F /* LocalError.swift in Sources */,
 				EAA85F3725DF03A20071288F /* LoadingView.swift in Sources */,
-				EA81394E2582545C00F70B58 /* StateCollectionItem.swift in Sources */,
 				EAA85F3425DF01090071288F /* CollectionController.swift in Sources */,
 				EA71219A2574466D003ACB13 /* MapRouter.swift in Sources */,
 				EA0A86292572A1C100F3C9B7 /* FlightCollectionItem.swift in Sources */,
-				EA813950258254BF00F70B58 /* StateCollectionCell.swift in Sources */,
 				EA81394B2581056200F70B58 /* Rect.swift in Sources */,
 				EAACDE5B250E485700B01B8F /* FlightSearchController.swift in Sources */,
 				EA0A862B2572A1DE00F3C9B7 /* FlightCollectionCell.swift in Sources */,
