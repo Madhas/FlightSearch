@@ -38,6 +38,7 @@
 		EAA85F2E25DEEE160071288F /* CollectionSectionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F2D25DEEE160071288F /* CollectionSectionDescriptor.swift */; };
 		EAA85F3225DEFA400071288F /* CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F3125DEFA400071288F /* CollectionDataSource.swift */; };
 		EAA85F3425DF01090071288F /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F3325DF01090071288F /* CollectionController.swift */; };
+		EAA85F3725DF03A20071288F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F3625DF03A20071288F /* LoadingView.swift */; };
 		EAACDE53250D01EE00B01B8F /* HTTPWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; };
 		EAACDE54250D01EE00B01B8F /* HTTPWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EAACDE5B250E485700B01B8F /* FlightSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE5A250E485700B01B8F /* FlightSearchController.swift */; };
@@ -96,6 +97,7 @@
 		EAA85F2D25DEEE160071288F /* CollectionSectionDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSectionDescriptor.swift; sourceTree = "<group>"; };
 		EAA85F3125DEFA400071288F /* CollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDataSource.swift; sourceTree = "<group>"; };
 		EAA85F3325DF01090071288F /* CollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
+		EAA85F3625DF03A20071288F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPWrapper.framework; path = FlightSearch/Dependencies/HTTPWrapper.framework; sourceTree = "<group>"; };
 		EAACDE5A250E485700B01B8F /* FlightSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchController.swift; sourceTree = "<group>"; };
 		EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchPresenter.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		EA0A86122572929200F3C9B7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				EAA85F3525DF03930071288F /* State */,
 				EA0A86372572AFE900F3C9B7 /* Search */,
 				EA813904257CD7A300F70B58 /* Map */,
 			);
@@ -253,6 +256,14 @@
 				EAA85F2D25DEEE160071288F /* CollectionSectionDescriptor.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		EAA85F3525DF03930071288F /* State */ = {
+			isa = PBXGroup;
+			children = (
+				EAA85F3625DF03A20071288F /* LoadingView.swift */,
+			);
+			name = State;
 			sourceTree = "<group>";
 		};
 		EAACDE51250D01ED00B01B8F /* Frameworks */ = {
@@ -443,6 +454,7 @@
 				EA0A8615257292D500F3C9B7 /* FlightsCollectionDataSource.swift in Sources */,
 				EA813912257D2D3A00F70B58 /* MKMapRect+Convenience.swift in Sources */,
 				EA813909257CE6A500F70B58 /* AirportAnnotationView.swift in Sources */,
+				EAA85F3725DF03A20071288F /* LoadingView.swift in Sources */,
 				EA81394E2582545C00F70B58 /* StateCollectionItem.swift in Sources */,
 				EAA85F3425DF01090071288F /* CollectionController.swift in Sources */,
 				EA71219A2574466D003ACB13 /* MapRouter.swift in Sources */,
