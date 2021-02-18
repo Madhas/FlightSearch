@@ -47,6 +47,7 @@ class CollectionController: UIViewController {
         dataSource?.clear()
         collectionView.reloadData()
         
+        infoView?.removeFromSuperview()
         collectionView.addSubview(loadingView)
         self.loadingView = loadingView
     }
@@ -58,14 +59,16 @@ class CollectionController: UIViewController {
         }
         
         let view = InfoView()
-        view.label.font = .systemFont(ofSize: 17)
+        view.label.font = .systemFont(ofSize: 15)
         view.label.textAlignment = .center
         view.label.textColor = .textSecondary
         view.label.numberOfLines = 4
         view.label.text = text
         
         let height = view.label.sizeThatFits(CGSize(width: collectionView.bounds.width, height: .greatestFiniteMagnitude)).height
-        view.frame = CGRect(x: 0, y: 0, width: collectionView.bounds.width, height: height + 24)
+        view.frame = CGRect(x: 0, y: 0, width: collectionView.bounds.width, height: height + 48)
+        
+        loadingView?.removeFromSuperview()
         collectionView.addSubview(view)
         infoView = view
     }
