@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,8 +39,8 @@
 		EAA85F3725DF03A20071288F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F3625DF03A20071288F /* LoadingView.swift */; };
 		EAA85F3925DF08050071288F /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F3825DF08050071288F /* InfoView.swift */; };
 		EAA85F3B25DF0D3B0071288F /* LocalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F3A25DF0D3B0071288F /* LocalError.swift */; };
-		EAACDE53250D01EE00B01B8F /* HTTPWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; };
-		EAACDE54250D01EE00B01B8F /* HTTPWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EAA85F7725DFF8ED0071288F /* HTTPWrapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA85F5A25DFF66E0071288F /* HTTPWrapper.xcframework */; };
+		EAA85F7825DFF8ED0071288F /* HTTPWrapper.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAA85F5A25DFF66E0071288F /* HTTPWrapper.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EAACDE5B250E485700B01B8F /* FlightSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE5A250E485700B01B8F /* FlightSearchController.swift */; };
 		EAACDE5D250E488400B01B8F /* FlightSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */; };
 		EAACDE61250E4F8E00B01B8F /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE60250E4F8E00B01B8F /* Flight.swift */; };
@@ -50,13 +50,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EAACDE55250D01EE00B01B8F /* Embed Frameworks */ = {
+		EAA85F7925DFF8ED0071288F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EAACDE54250D01EE00B01B8F /* HTTPWrapper.framework in Embed Frameworks */,
+				EAA85F7825DFF8ED0071288F /* HTTPWrapper.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +98,7 @@
 		EAA85F3625DF03A20071288F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EAA85F3825DF08050071288F /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		EAA85F3A25DF0D3B0071288F /* LocalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalError.swift; sourceTree = "<group>"; };
+		EAA85F5A25DFF66E0071288F /* HTTPWrapper.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = HTTPWrapper.xcframework; path = "../../../Library/Developer/Xcode/DerivedData/HTTPWrapper-gpuxjtrpzfgavxapxqyuqlfowesi/Build/Products/XCFramework/HTTPWrapper.xcframework"; sourceTree = "<group>"; };
 		EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPWrapper.framework; path = FlightSearch/Dependencies/HTTPWrapper.framework; sourceTree = "<group>"; };
 		EAACDE5A250E485700B01B8F /* FlightSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchController.swift; sourceTree = "<group>"; };
 		EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchPresenter.swift; sourceTree = "<group>"; };
@@ -112,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAACDE53250D01EE00B01B8F /* HTTPWrapper.framework in Frameworks */,
+				EAA85F7725DFF8ED0071288F /* HTTPWrapper.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +261,7 @@
 		EAACDE51250D01ED00B01B8F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAA85F5A25DFF66E0071288F /* HTTPWrapper.xcframework */,
 				EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */,
 			);
 			name = Frameworks;
@@ -368,7 +370,7 @@
 				EA74B9CD24FC1E2F001623B0 /* Sources */,
 				EA74B9CE24FC1E2F001623B0 /* Frameworks */,
 				EA74B9CF24FC1E2F001623B0 /* Resources */,
-				EAACDE55250D01EE00B01B8F /* Embed Frameworks */,
+				EAA85F7925DFF8ED0071288F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
