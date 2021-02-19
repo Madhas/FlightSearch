@@ -2,4 +2,4 @@
 
 "flight_search_placeholder" = "City, country or airport";
 
-"common_error_not_found" = "Flights not found.";
+"common_error_not_found" = "No results.";
