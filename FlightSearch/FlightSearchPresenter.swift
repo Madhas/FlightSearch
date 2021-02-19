@@ -28,6 +28,7 @@ final class FlightSearchPresenter: FlightSearchViewOutput {
     
     func didEnter(query: String) {
         guard query.count > 0 else {
+            placesService.cancelLastRequest()
             viewInput.show(items: [])
             return
         }
