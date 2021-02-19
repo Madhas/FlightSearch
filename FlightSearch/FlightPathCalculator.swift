@@ -15,31 +15,37 @@ final class FlightPathCalculator {
     private var endPoint: Point
     
     private var ctrlPoint1: Point {
-        if boundingRect.width > boundingRect.height {
-            let addend = startPoint.y > endPoint.y ? amplitude : -amplitude
-            return Point(x: boundingRect.minX + boundingRect.width / 3,
-                         y: boundingRect.midY + addend)
+        if max(boundingRect.width, boundingRect.height) / min(boundingRect.width, boundingRect.height) < 2 {
+            let addend = startPoint.x > endPoint.x ? -amplitude : amplitude
+            return Point(x: startPoint.x + addend, y: startPoint.y)
+        } else if boundingRect.width > boundingRect.height {
+            let addendX = startPoint.x > endPoint.x ? -boundingRect.width / 3 : boundingRect.width / 3
+            let addendY = startPoint.y > endPoint.y ? amplitude : -amplitude
+            return Point(x: startPoint.x + addendX, y: startPoint.y + addendY)
         } else {
-            let addend = startPoint.x > endPoint.x ? amplitude : -amplitude
-            return Point(x: boundingRect.midX + addend,
-                         y: boundingRect.minY + boundingRect.height / 3)
+            let addendX = startPoint.x > endPoint.x ? amplitude : -amplitude
+            let addendY = startPoint.y > endPoint.y ? -boundingRect.height / 3 : boundingRect.height / 3
+            return Point(x: startPoint.x + addendX, y: startPoint.y + addendY)
         }
     }
     
     private var ctrlPoint2: Point {
-        if boundingRect.width > boundingRect.height {
-            let addend = startPoint.y > endPoint.y ? amplitude : -amplitude
-            return Point(x: boundingRect.minX + boundingRect.width * 2 / 3,
-                         y: boundingRect.midY - addend)
-        } else {
+        if max(boundingRect.width, boundingRect.height) / min(boundingRect.width, boundingRect.height) < 2 {
             let addend = startPoint.x > endPoint.x ? amplitude : -amplitude
-            return Point(x: boundingRect.midX - addend,
-                         y: boundingRect.minY + boundingRect.height * 2 / 3)
+            return Point(x: endPoint.x + addend, y: endPoint.y)
+        } else if boundingRect.width > boundingRect.height {
+            let addendX = startPoint.x > endPoint.x ? boundingRect.width / 3 : -boundingRect.width / 3
+            let addendY = startPoint.y > endPoint.y ? -amplitude : amplitude
+            return Point(x: endPoint.x + addendX, y: endPoint.y + addendY)
+        } else {
+            let addendX = startPoint.x > endPoint.x ? -amplitude : amplitude
+            let addendY = startPoint.y > endPoint.y ? boundingRect.height / 3 : -boundingRect.height / 3
+            return Point(x: endPoint.x + addendX, y: endPoint.y + addendY)
         }
     }
     
     private var amplitude: Double {
-        max(min(boundingRect.height, boundingRect.width), max(boundingRect.height, boundingRect.width) / 4)
+        max(boundingRect.width, boundingRect.height) * 0.6
     }
     
     convenience init() {
