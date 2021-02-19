@@ -11,14 +11,14 @@ import Foundation
 extension String {
 
     static var searchBarCancel: String {
-        "Cancel"
+        NSLocalizedString("common_cancel", comment: "")
     }
     
     static var searchPlaceholder: String {
-        "City, country or airport"
+        NSLocalizedString("flight_search_placeholder", comment: "")
     }
     
     static var flightsNotFound: String {
-        "Flights not found."
+        NSLocalizedString("common_error_not_found", comment: "")
     }
 }

@@ -41,6 +41,7 @@
 		EAA85F3B25DF0D3B0071288F /* LocalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F3A25DF0D3B0071288F /* LocalError.swift */; };
 		EAA85F7725DFF8ED0071288F /* HTTPWrapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA85F5A25DFF66E0071288F /* HTTPWrapper.xcframework */; };
 		EAA85F7825DFF8ED0071288F /* HTTPWrapper.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAA85F5A25DFF66E0071288F /* HTTPWrapper.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EAA85FC925E02B0C0071288F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAA85FCB25E02B0C0071288F /* Localizable.strings */; };
 		EAACDE5B250E485700B01B8F /* FlightSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE5A250E485700B01B8F /* FlightSearchController.swift */; };
 		EAACDE5D250E488400B01B8F /* FlightSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */; };
 		EAACDE61250E4F8E00B01B8F /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE60250E4F8E00B01B8F /* Flight.swift */; };
@@ -99,6 +100,9 @@
 		EAA85F3825DF08050071288F /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		EAA85F3A25DF0D3B0071288F /* LocalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalError.swift; sourceTree = "<group>"; };
 		EAA85F5A25DFF66E0071288F /* HTTPWrapper.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = HTTPWrapper.xcframework; path = "../../../Library/Developer/Xcode/DerivedData/HTTPWrapper-gpuxjtrpzfgavxapxqyuqlfowesi/Build/Products/XCFramework/HTTPWrapper.xcframework"; sourceTree = "<group>"; };
+		EAA85FCA25E02B0C0071288F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EAA85FCD25E02D020071288F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		EAA85FCE25E02D020071288F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPWrapper.framework; path = FlightSearch/Dependencies/HTTPWrapper.framework; sourceTree = "<group>"; };
 		EAACDE5A250E485700B01B8F /* FlightSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchController.swift; sourceTree = "<group>"; };
 		EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchPresenter.swift; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 				EA0A863A2572B48400F3C9B7 /* UIImage+Assets.swift */,
 				EA0A863C2572B5B000F3C9B7 /* UIColor+Resources.swift */,
 				EA0A863E2572DA1200F3C9B7 /* String+Localization.swift */,
+				EAA85FCB25E02B0C0071288F /* Localizable.strings */,
 				EA74B9DD24FC1E30001623B0 /* Assets.xcassets */,
 				EA74B9E224FC1E30001623B0 /* Info.plist */,
 			);
@@ -403,6 +408,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = EA74B9C824FC1E2F001623B0;
 			productRefGroup = EA74B9D224FC1E2F001623B0 /* Products */;
@@ -420,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA74B9E124FC1E30001623B0 /* LaunchScreen.storyboard in Resources */,
+				EAA85FC925E02B0C0071288F /* Localizable.strings in Resources */,
 				EA74B9DE24FC1E30001623B0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,8 +484,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				EA74B9E024FC1E30001623B0 /* Base */,
+				EAA85FCD25E02D020071288F /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EAA85FCB25E02B0C0071288F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAA85FCA25E02B0C0071288F /* en */,
+				EAA85FCE25E02D020071288F /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -488,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -534,7 +552,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -548,6 +566,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -588,7 +607,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
