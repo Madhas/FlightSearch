@@ -10,10 +10,6 @@ import UIKit
 
 class CollectionController: UIViewController {
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
-    }
-    
     var collectionViewLayout: UICollectionViewLayout {
         UICollectionViewFlowLayout()
     }
