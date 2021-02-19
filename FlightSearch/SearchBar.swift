@@ -118,6 +118,7 @@ final class SearchBar: UIView {
     
     private func configureView() {
         textField.backgroundColor = .searchBackground
+        textField.tintColor = .accent
         textField.layer.cornerRadius = 10
         textField.textColor = .textPrimary
         textField.font = .systemFont(ofSize: 17)

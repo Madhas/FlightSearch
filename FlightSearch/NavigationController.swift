@@ -22,6 +22,7 @@ class NavigationController: UINavigationController {
 
     private func configureAppearance() {
         navigationBar.barTintColor = .backgroundNavigation
+        navigationBar.tintColor = .white
         navigationBar.shadowImage = UIImage()
     }
 }
