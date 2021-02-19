@@ -83,6 +83,8 @@ class FlightCollectionCell: UICollectionViewCell {
         
         subtitleLabel.text = item.subtitle
         subtitleLabel.isHidden = item.subtitle == nil
+        
+        setNeedsLayout()
     }
     
     private func configureView() {
