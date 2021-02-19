@@ -10,7 +10,7 @@ import MapKit
 
 final class PlaneAnnotationView: MKAnnotationView {
     
-    static private let animationDuration: Double = 10
+    static private let animationDuration: Double = 7
     
     private let calculator = FlightPathCalculator()
     private var displayLink: CADisplayLink?
