@@ -22,17 +22,25 @@ final class PlacesService {
     }
     
     func loadPlaces(query: String, completion: @escaping (Result<[Flight]>) -> Void) {
+        let completionBlock = { (result: Result<[Flight]>) in
+            if case let .failure(error) = result, (error as NSError).code == NSURLErrorCancelled {
+                return
+            }
+            
+            completion(result)
+        }
+        
         if throttle > 0 {
             placesWorkItem?.cancel()
             let workItem = DispatchWorkItem(block: { [weak self] in
                 let request = PlacesRequest(term: query)
-                self?.lastRequest = self?.client.send(request: request, completion: completion)
+                self?.lastRequest = self?.client.send(request: request, completion: completionBlock)
             })
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + throttle, execute: workItem)
             placesWorkItem = workItem
         } else {
             let request = PlacesRequest(term: query)
-            lastRequest = client.send(request: request, completion: completion)
+            lastRequest = client.send(request: request, completion: completionBlock)
         }
     }
     
