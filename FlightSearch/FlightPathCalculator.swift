@@ -16,7 +16,7 @@ final class FlightPathCalculator {
     
     private var ctrlPoint1: Point {
         if max(boundingRect.width, boundingRect.height) / min(boundingRect.width, boundingRect.height) < 2 {
-            let addend = startPoint.x > endPoint.x ? -amplitude : amplitude
+            let addend = startPoint.x > endPoint.x ? -amplitude * 2 : amplitude * 2
             return Point(x: startPoint.x + addend, y: startPoint.y)
         } else if boundingRect.width > boundingRect.height {
             let addendX = startPoint.x > endPoint.x ? -boundingRect.width / 3 : boundingRect.width / 3
@@ -31,7 +31,7 @@ final class FlightPathCalculator {
     
     private var ctrlPoint2: Point {
         if max(boundingRect.width, boundingRect.height) / min(boundingRect.width, boundingRect.height) < 2 {
-            let addend = startPoint.x > endPoint.x ? amplitude : -amplitude
+            let addend = startPoint.x > endPoint.x ? amplitude * 2 : -amplitude * 2
             return Point(x: endPoint.x + addend, y: endPoint.y)
         } else if boundingRect.width > boundingRect.height {
             let addendX = startPoint.x > endPoint.x ? boundingRect.width / 3 : -boundingRect.width / 3
@@ -45,7 +45,7 @@ final class FlightPathCalculator {
     }
     
     private var amplitude: Double {
-        max(boundingRect.width, boundingRect.height) * 0.6
+        max(boundingRect.width, boundingRect.height) * 0.3
     }
     
     convenience init() {
