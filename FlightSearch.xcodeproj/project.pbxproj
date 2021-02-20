@@ -39,9 +39,10 @@
 		EAA85F3725DF03A20071288F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F3625DF03A20071288F /* LoadingView.swift */; };
 		EAA85F3925DF08050071288F /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F3825DF08050071288F /* InfoView.swift */; };
 		EAA85F3B25DF0D3B0071288F /* LocalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA85F3A25DF0D3B0071288F /* LocalError.swift */; };
-		EAA85F7725DFF8ED0071288F /* HTTPWrapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA85F5A25DFF66E0071288F /* HTTPWrapper.xcframework */; };
-		EAA85F7825DFF8ED0071288F /* HTTPWrapper.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAA85F5A25DFF66E0071288F /* HTTPWrapper.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EAA85FC925E02B0C0071288F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAA85FCB25E02B0C0071288F /* Localizable.strings */; };
+		EAA8602F25E1914B0071288F /* HTTPWrapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA8602E25E1914B0071288F /* HTTPWrapper.xcframework */; };
+		EAA8603025E1914B0071288F /* HTTPWrapper.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAA8602E25E1914B0071288F /* HTTPWrapper.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EAA8603225E193310071288F /* HTTPWrapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA8602E25E1914B0071288F /* HTTPWrapper.xcframework */; };
 		EAACDE5B250E485700B01B8F /* FlightSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE5A250E485700B01B8F /* FlightSearchController.swift */; };
 		EAACDE5D250E488400B01B8F /* FlightSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */; };
 		EAACDE61250E4F8E00B01B8F /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACDE60250E4F8E00B01B8F /* Flight.swift */; };
@@ -51,13 +52,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EAA85F7925DFF8ED0071288F /* Embed Frameworks */ = {
+		EAA8603125E1914B0071288F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EAA85F7825DFF8ED0071288F /* HTTPWrapper.xcframework in Embed Frameworks */,
+				EAA8603025E1914B0071288F /* HTTPWrapper.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +106,7 @@
 		EAA85FCE25E02D020071288F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EAA85FCF25E030490071288F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EAA85FD025E030490071288F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EAA8602E25E1914B0071288F /* HTTPWrapper.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = HTTPWrapper.xcframework; path = FlightSearch/Dependencies/HTTPWrapper.xcframework; sourceTree = "<group>"; };
 		EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPWrapper.framework; path = FlightSearch/Dependencies/HTTPWrapper.framework; sourceTree = "<group>"; };
 		EAACDE5A250E485700B01B8F /* FlightSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchController.swift; sourceTree = "<group>"; };
 		EAACDE5C250E488400B01B8F /* FlightSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchPresenter.swift; sourceTree = "<group>"; };
@@ -119,7 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAA85F7725DFF8ED0071288F /* HTTPWrapper.xcframework in Frameworks */,
+				EAA8602F25E1914B0071288F /* HTTPWrapper.xcframework in Frameworks */,
+				EAA8603225E193310071288F /* HTTPWrapper.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				EAA85F5A25DFF66E0071288F /* HTTPWrapper.xcframework */,
+				EAA8602E25E1914B0071288F /* HTTPWrapper.xcframework */,
 				EAACDE52250D01EE00B01B8F /* HTTPWrapper.framework */,
 			);
 			name = Frameworks;
@@ -377,7 +381,7 @@
 				EA74B9CD24FC1E2F001623B0 /* Sources */,
 				EA74B9CE24FC1E2F001623B0 /* Frameworks */,
 				EA74B9CF24FC1E2F001623B0 /* Resources */,
-				EAA85F7925DFF8ED0071288F /* Embed Frameworks */,
+				EAA8603125E1914B0071288F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -1,0 +1,132 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name HTTPWrapper
+import Foundation
+@_exported import HTTPWrapper
+import Swift
+public protocol HTTPNetworking : AnyObject {
+  func send<T>(request: T, completion: @escaping HTTPWrapper.CompletionHandler<T.Response>) -> HTTPWrapper.RequestToken? where T : HTTPWrapper.Request
+}
+public enum HTTPMethod : Swift.String {
+  case get
+  case post
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum NetworkError : Swift.Error {
+  case httpError(statusCode: Swift.Int)
+  case serializationError(reason: Swift.String)
+  case invalidResponse
+}
+open class RequestSerializer {
+  public init()
+  open func serialize<T>(request: T, for client: HTTPWrapper.HTTPClient) throws -> Foundation.URLRequest where T : HTTPWrapper.Request
+  @objc deinit
+}
+public protocol ParametersEncoder {
+  func encode(parameters: [Swift.String : Any]?, to request: inout Foundation.URLRequest) throws
+}
+public class QueryEncoder {
+  public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class URLParametersEncoder : HTTPWrapper.QueryEncoder, HTTPWrapper.ParametersEncoder {
+  final public func encode(parameters: [Swift.String : Any]?, to request: inout Foundation.URLRequest) throws
+  @objc deinit
+  override public init()
+}
+@_inheritsConvenienceInitializers final public class URLFormParametersEncoder : HTTPWrapper.QueryEncoder, HTTPWrapper.ParametersEncoder {
+  final public func encode(parameters: [Swift.String : Any]?, to request: inout Foundation.URLRequest) throws
+  @objc deinit
+  override public init()
+}
+final public class JSONParametersEncoder : HTTPWrapper.ParametersEncoder {
+  public init(encodingOptions: Foundation.JSONSerialization.WritingOptions = [])
+  final public func encode(parameters: [Swift.String : Any]?, to request: inout Foundation.URLRequest) throws
+  @objc deinit
+}
+@frozen public enum Result<T> {
+  case success(value: T)
+  case failure(error: Swift.Error)
+}
+@_hasMissingDesignatedInitializers public class RequestToken {
+  public func resume()
+  public func suspend()
+  public func cancel()
+  @objc deinit
+}
+public enum SessionType {
+  case `default`
+  case background(identifier: Swift.String)
+}
+public struct HTTPConfiguration {
+  public let baseUrl: Swift.String
+  public let timeoutInterval: Foundation.TimeInterval
+  public let sessionType: HTTPWrapper.SessionType
+  public let acceptableStatusCodes: Swift.Set<Swift.Int>
+  public let headers: [Swift.String : Swift.String]
+  public let completionQueue: Dispatch.DispatchQueue
+  public let requestSerializer: HTTPWrapper.RequestSerializer
+  public init(baseUrl: Swift.String, timeoutInterval: Foundation.TimeInterval = 20, sessionType: HTTPWrapper.SessionType = .default, acceptableStatusCodes: Swift.Set<Swift.Int> = Set(200 ..< 300), headers: [Swift.String : Swift.String] = [:], completionQueue: Dispatch.DispatchQueue = DispatchQueue.main, requestSerializer: HTTPWrapper.RequestSerializer = RequestSerializer())
+}
+public protocol Request {
+  associatedtype Serializer : HTTPWrapper.ResponseSerializer
+  typealias Response = Self.Serializer.ModelType
+  var urlPath: Swift.String { get }
+  var method: HTTPWrapper.HTTPMethod { get }
+  var parameters: [Swift.String : Any]? { get }
+  var timeoutInterval: Foundation.TimeInterval? { get }
+  var requestHeaders: [Swift.String : Swift.String] { get }
+  var responseSerializer: Self.Serializer { get }
+  var parametersEncoder: HTTPWrapper.ParametersEncoder { get }
+}
+extension Request {
+  public var method: HTTPWrapper.HTTPMethod {
+    get
+  }
+  public var parameters: [Swift.String : Any]? {
+    get
+  }
+  public var timeoutInterval: Foundation.TimeInterval? {
+    get
+  }
+  public var requestHeaders: [Swift.String : Swift.String] {
+    get
+  }
+  public var parametersEncoder: HTTPWrapper.ParametersEncoder {
+    get
+  }
+}
+public protocol ResponseSerializer {
+  associatedtype ModelType
+  func serialize(data: Foundation.Data?) -> HTTPWrapper.Result<Self.ModelType>
+}
+final public class VoidSerializer : HTTPWrapper.ResponseSerializer {
+  public init()
+  final public func serialize(data: Foundation.Data?) -> HTTPWrapper.Result<Swift.Void>
+  @objc deinit
+  public typealias ModelType = ()
+}
+final public class JSONResponseSerializer<ModelType> : HTTPWrapper.ResponseSerializer where ModelType : Swift.Decodable {
+  public init(decoder: Foundation.JSONDecoder = JSONDecoder())
+  final public func serialize(data: Foundation.Data?) -> HTTPWrapper.Result<ModelType>
+  @objc deinit
+}
+public typealias CompletionHandler<T> = (HTTPWrapper.Result<T>) -> ()
+open class HTTPClient {
+  final public let urlSession: Foundation.URLSession
+  final public let configuration: HTTPWrapper.HTTPConfiguration
+  public init(configuration: HTTPWrapper.HTTPConfiguration)
+  open func proccessResponse<T>(data: Foundation.Data?, urlResponse: Foundation.URLResponse?, error: Swift.Error?, for request: T) -> HTTPWrapper.Result<T.Response> where T : HTTPWrapper.Request
+  @objc deinit
+}
+extension HTTPClient : HTTPWrapper.HTTPNetworking {
+  @discardableResult
+  public func send<T>(request: T, completion: @escaping HTTPWrapper.CompletionHandler<T.Response>) -> HTTPWrapper.RequestToken? where T : HTTPWrapper.Request
+}
+extension HTTPWrapper.HTTPMethod : Swift.Equatable {}
+extension HTTPWrapper.HTTPMethod : Swift.Hashable {}
+extension HTTPWrapper.HTTPMethod : Swift.RawRepresentable {}
