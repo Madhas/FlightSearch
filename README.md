@@ -1,6 +1,6 @@
 # FlightSearch
 
-Small project implementing plane flight animation over Apple Maps. The animation is taken from Aviasales iOS app. The app also uses Aviasales API method to search for the airports.
+Small project implementing plane flight animation over Apple Maps. The animation duplicates one from Aviasales iOS app, though it's no longer present in the latter. The app also uses Aviasales API method to search for the airports.
 
 ## Flight Search and Animation Example
 
