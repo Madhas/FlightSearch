@@ -101,11 +101,7 @@ extension FlightSearchController: FlightSearchViewInput {
     }
     
     func show(error: Error) {
-        if let error = error as? LocalError {
-            setInfo(text: error.description)
-        } else {
-            setInfo(text: error.localizedDescription)
-        }
+        setInfo(text: error.localizedDescription)
     }
 }
 

@@ -8,15 +8,14 @@
 
 import Foundation
 
-enum LocalError: Error {
+enum LocalError: Error, LocalizedError {
     
     case notFound
     
-    var description: String {
+    var errorDescription: String? {
         switch self {
         case .notFound:
             return .flightsNotFound
         }
-        
     }
 }
