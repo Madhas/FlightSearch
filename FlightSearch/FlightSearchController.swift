@@ -26,6 +26,10 @@ final class FlightSearchController: CollectionController {
         return layout
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     private var flightDataSource: FlightsCollectionDataSource {
         return dataSource as! FlightsCollectionDataSource
     }
