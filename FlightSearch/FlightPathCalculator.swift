@@ -2,7 +2,7 @@
 //  FlightPathCalculator.swift
 //  FlightSearch
 //
-//  Created by Андрей Овсянников on 07.12.2020.
+//  Created by Andrey Ovsyannikov on 07.12.2020.
 //  Copyright © 2020 home.com. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  InfoView.swift
 //  FlightSearch
 //
-//  Created by Андрей Овсянников on 18.02.2021.
+//  Created by Andrey Ovsyannikov on 18.02.2021.
 //  Copyright © 2021 home.com. All rights reserved.
 //
 

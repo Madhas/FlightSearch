@@ -2,7 +2,7 @@
 //  AirportAnnotationView.swift
 //  FlightSearch
 //
-//  Created by Андрей Овсянников on 06.12.2020.
+//  Created by Andrey Ovsyannikov on 06.12.2020.
 //  Copyright © 2020 home.com. All rights reserved.
 //
 
