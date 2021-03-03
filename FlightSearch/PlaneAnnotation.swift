@@ -18,7 +18,9 @@ final class PlaneAnnotation: NSObject, MKAnnotation {
     let endPoint: MKMapPoint
     let boundingRect: MKMapRect
     
-    init(start: Flight.Location, finish: Flight.Location) {
+    let camera: MKMapCamera
+    
+    init(start: Flight.Location, finish: Flight.Location, camera: MKMapCamera) {
         let startCoordinate = CLLocationCoordinate2D(latitude: start.latitude, longitude: start.longitude)
         let finishCoordinate = CLLocationCoordinate2D(latitude: finish.latitude, longitude: finish.longitude)
         
@@ -26,6 +28,8 @@ final class PlaneAnnotation: NSObject, MKAnnotation {
         startPoint = MKMapPoint(startCoordinate)
         endPoint = MKMapPoint(finishCoordinate)
         boundingRect = MKMapRect(start: start, finish: finish)
+        
+        self.camera = camera
         
         super.init()
     }

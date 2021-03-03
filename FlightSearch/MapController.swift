@@ -44,7 +44,7 @@ class MapController: UIViewController {
         let finishAnnotation = AirportAnnotation(coordinate: finishCoordinate,
                                                  title: finish.iata)
         
-        let planeAnnotation = PlaneAnnotation(start: start.location, finish: finish.location)
+        let planeAnnotation = PlaneAnnotation(start: start.location, finish: finish.location, camera: mapView.camera)
         
         mapView.addAnnotation(startAnnotation)
         mapView.addAnnotation(finishAnnotation)

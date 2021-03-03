@@ -60,9 +60,10 @@ final class PlaneAnnotationView: MKAnnotationView {
         }
         
         let center = calculator.point(from: progress)
-        let angle = calculator.angle(from: progress)
+        let angle = calculator.angle(from: progress) - (annotation.camera.heading * .pi / 180)
         
         annotation.coordinate = center.mapPoint.coordinate
+        
         transform = CGAffineTransform(rotationAngle: CGFloat(annotation.directionForward ? angle : angle + .pi))
     }
 }
