@@ -18,6 +18,7 @@ class MapController: UIViewController {
     var viewOutput: MapViewOutput!
     
     private var mapView: MKMapView!
+    private var animation: PlaneAnimation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,10 @@ class MapController: UIViewController {
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
         view.addSubview(mapView)
+        
+        mapView.register(PlaneAnnotationView.self, forAnnotationViewWithReuseIdentifier: String(describing: PlaneAnnotationView.self))
+        mapView.register(AirportAnnotationView.self, forAnnotationViewWithReuseIdentifier: String(describing: AirportAnnotationView.self))
+        
         
         viewOutput.touch()
     }
@@ -44,7 +49,7 @@ class MapController: UIViewController {
         let finishAnnotation = AirportAnnotation(coordinate: finishCoordinate,
                                                  title: finish.iata)
         
-        let planeAnnotation = PlaneAnnotation(start: start.location, finish: finish.location, camera: mapView.camera)
+        let planeAnnotation = PlaneAnnotation(coordinate: start.location)
         
         mapView.addAnnotation(startAnnotation)
         mapView.addAnnotation(finishAnnotation)
@@ -66,6 +71,8 @@ extension MapController: MapViewInput {
         showRegionBetween(start: start, finish: finish)
         addAnnotations(start: start, finish: finish)
         addPath(from: start, to: finish)
+        
+        animation = PlaneAnimation(from: start.location, to: finish.location, camera: mapView.camera)
     }
 }
 
@@ -75,9 +82,16 @@ extension MapController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is AirportAnnotation {
-            return AirportAnnotationView(annotation: annotation, reuseIdentifier: String(describing: AirportAnnotationView.self))
+            return mapView.dequeueReusableAnnotationView(withIdentifier: String(describing: AirportAnnotationView.self), for: annotation)
         } else if annotation is PlaneAnnotation {
-            return PlaneAnnotationView(annotation: annotation, reuseIdentifier: String(describing: PlaneAnnotationView.self))
+            let view = mapView.dequeueReusableAnnotationView(withIdentifier: String(describing: PlaneAnnotationView.self), for: annotation)
+            
+            animation?.view = view
+            if animation?.inProgess == false {
+                animation?.start()
+            }
+            
+            return view
         }
         
         return nil
