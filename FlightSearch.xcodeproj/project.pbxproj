@@ -15,6 +15,7 @@
 		EA0A863B2572B48400F3C9B7 /* UIImage+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A863A2572B48400F3C9B7 /* UIImage+Assets.swift */; };
 		EA0A863D2572B5B000F3C9B7 /* UIColor+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A863C2572B5B000F3C9B7 /* UIColor+Resources.swift */; };
 		EA0A863F2572DA1200F3C9B7 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A863E2572DA1200F3C9B7 /* String+Localization.swift */; };
+		EA617D752675074600375543 /* PlaneAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA617D742675074600375543 /* PlaneAnimation.swift */; };
 		EA7121882573E67C003ACB13 /* FlightSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7121872573E67C003ACB13 /* FlightSearchRouter.swift */; };
 		EA71218A2573E9BB003ACB13 /* HTTPConfiguration+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7121892573E9BB003ACB13 /* HTTPConfiguration+Convenience.swift */; };
 		EA71219625744653003ACB13 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71219525744653003ACB13 /* MapController.swift */; };
@@ -74,6 +75,7 @@
 		EA0A863A2572B48400F3C9B7 /* UIImage+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Assets.swift"; sourceTree = "<group>"; };
 		EA0A863C2572B5B000F3C9B7 /* UIColor+Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Resources.swift"; sourceTree = "<group>"; };
 		EA0A863E2572DA1200F3C9B7 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		EA617D742675074600375543 /* PlaneAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneAnimation.swift; sourceTree = "<group>"; };
 		EA7121872573E67C003ACB13 /* FlightSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchRouter.swift; sourceTree = "<group>"; };
 		EA7121892573E9BB003ACB13 /* HTTPConfiguration+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPConfiguration+Convenience.swift"; sourceTree = "<group>"; };
 		EA71219525744653003ACB13 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		EA0A86122572929200F3C9B7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				EA617D732675073400375543 /* Animation */,
 				EA813904257CD7A300F70B58 /* Map */,
 				EA0A86372572AFE900F3C9B7 /* Search */,
 				EAA85F3525DF03930071288F /* State */,
@@ -173,6 +176,14 @@
 				EA0A86382572B00000F3C9B7 /* SearchBarTextField.swift */,
 			);
 			name = Search;
+			sourceTree = "<group>";
+		};
+		EA617D732675073400375543 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				EA617D742675074600375543 /* PlaneAnimation.swift */,
+			);
+			name = Animation;
 			sourceTree = "<group>";
 		};
 		EA71219425744630003ACB13 /* Map */ = {
@@ -477,6 +488,7 @@
 				EA71219625744653003ACB13 /* MapController.swift in Sources */,
 				EA813906257CD7C600F70B58 /* AirportAnnotation.swift in Sources */,
 				EA81394725800B5100F70B58 /* PlaneAnnotation.swift in Sources */,
+				EA617D752675074600375543 /* PlaneAnimation.swift in Sources */,
 				EA0A86392572B00000F3C9B7 /* SearchBarTextField.swift in Sources */,
 				EA813914257D3EF000F70B58 /* PathOverlayRenderer.swift in Sources */,
 				EA813917257D68E500F70B58 /* Point+Arithmetic.swift in Sources */,
