@@ -13,26 +13,32 @@ protocol FlightSearchModuleOutput: AnyObject {
     func showMap(for flight: Flight)
 }
 
-final class FlightSearchRouter {
+protocol FlightSearchNavigator: AnyObject {
+    
+    func present(map: UIViewController)
+}
+
+final class FlightSearchModule {
 
     private let client: HTTPClient
     
-    private weak var controller: UIViewController?
+    private weak var navigator: FlightSearchNavigator!
     
     init(client: HTTPClient) {
         self.client = client
     }
     
-    func assembleModule() -> UIViewController {
+    static func assemble(with client: HTTPClient) -> UIViewController {
         let placesService = PlacesService(client: client)
         
+        let module = FlightSearchModule(client: client)
         let controller = FlightSearchController()
         let presenter = FlightSearchPresenter(placesService: placesService)
         
         controller.viewOutput = presenter
         presenter.viewInput = controller
-        presenter.moduleOutput = self
-        self.controller = controller
+        presenter.moduleOutput = module
+        module.navigator = controller
         
         return controller
     }
@@ -40,12 +46,10 @@ final class FlightSearchRouter {
 
 // MARK: FlightSearchModuleOutput
 
-extension FlightSearchRouter: FlightSearchModuleOutput {
+extension FlightSearchModule: FlightSearchModuleOutput {
     
     func showMap(for flight: Flight) {
-        let router = MapRouter(client: client)
-        let controller = router.assembleModule(flight: flight)
-        
-        self.controller?.navigationController?.pushViewController(controller, animated: true)
+        let controller = MapModule.assemble(client: client, flight: flight)
+        navigator.present(map: controller)
     }
 }

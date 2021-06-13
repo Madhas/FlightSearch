@@ -12,30 +12,34 @@ protocol MapModuleOutput: AnyObject {
     
 }
 
-final class MapRouter {
+protocol MapNavigator: AnyObject {
+}
+
+final class MapModule {
 
     private let client: HTTPClient
     
-    private weak var controller: UIViewController?
+    private weak var navigator: MapNavigator!
     
     init(client: HTTPClient) {
         self.client = client
     }
     
-    func assembleModule(flight: Flight) -> UIViewController {
+    static func assemble(client: HTTPClient, flight: Flight) -> UIViewController {
+        let module = MapModule(client: client)
         let controller = MapController()
         let presenter = MapPresenter(flight: flight)
         
         controller.viewOutput = presenter
         presenter.viewInput = controller
-        presenter.moduleOutput = self
-        self.controller = controller
+        presenter.moduleOutput = module
+        module.navigator = controller
         
         return controller
     }
 }
 
-extension MapRouter: MapModuleOutput {
+extension MapModule: MapModuleOutput {
 
     
 }

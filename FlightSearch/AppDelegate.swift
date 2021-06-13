@@ -17,9 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let client = HTTPClient(configuration: .default)
-        let router = FlightSearchRouter(client: client)
-        
-        let controller = router.assembleModule()
+        let controller = FlightSearchModule.assemble(with: client)
         
         let window = UIWindow()
         window.rootViewController = NavigationController(rootViewController: controller)

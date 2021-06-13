@@ -76,6 +76,10 @@ extension MapController: MapViewInput {
     }
 }
 
+// MARK: MapNavigator
+
+extension MapController: MapNavigator {}
+
 // MARK: MKMapViewDelegate
 
 extension MapController: MKMapViewDelegate {

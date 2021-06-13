@@ -109,6 +109,15 @@ extension FlightSearchController: FlightSearchViewInput {
     }
 }
 
+// MARK: FlightSearchNavigator
+
+extension FlightSearchController: FlightSearchNavigator {
+    
+    func present(map: UIViewController) {
+        navigationController?.pushViewController(map, animated: true)
+    }
+}
+
 // MARK: UICollectionViewDelegateFlowLayout
 
 extension FlightSearchController: UICollectionViewDelegateFlowLayout {
